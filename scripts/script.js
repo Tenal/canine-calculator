@@ -372,7 +372,7 @@ dogBreedApp.usersChoices = (size, activity, attention, training) => {
         if (activity === dogSizeOption.activityLevel && attention === dogSizeOption.attentionLevel && training === dogSizeOption.trainingLevel) {
 
             const usersBreed = dogSizeOption.breed;
-            console.log('DOG BREED OBJECT: ', usersBreed)
+            console.log('DOG BREED OBJECT: ', usersBreed);
         };
     });
 };
