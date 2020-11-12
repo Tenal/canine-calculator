@@ -1,0 +1,51 @@
+// COLOUR VARIABLES --------------------
+$background-colour: #E3C4A8; // OR #E7DEC8 // OR #F0ECE3 // OR #596E79
+$secondary-color: #5B124A; // OR #E6B54F // OR #FEFEFF
+$button-colour: #ABC5D2;
+$button-hover-colour: #7397AF;
+$button-clicked-colour: #142541;
+$font-colour: #000000;
+$secondary-font-colour: #ffffff;
+
+
+// GLOBAL STYLING --------------------
+*,
+p, 
+h1,
+h2, 
+h3,
+a,
+button,
+form {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    background-color: $background-colour;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img {
+	max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.wrapper {
+    max-width: 1280px;
+    width: 85%;
+    margin: 0 auto;
+}

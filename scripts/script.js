@@ -324,32 +324,48 @@ dogBreedApp.dogSize = {
     ]
 };
 
+
+
+// (3) EVENT LISTENER FUNCTION 
+dogBreedApp.eventListener = () => {
+    // listen for when the user submits the form
+    $('form').on('submit', function (event) {
+        // prevent default form behaviour (page refresh)
+        event.preventDefault();
+        console.log('form has been submitted!')
+        // run the form submit error handling function 
+        dogBreedApp.formSubmitErrorHandling();
+    });
+};
+
+
+
 // (4) FORM SUBMIT ERROR HANDLING FUNCTION
 dogBreedApp.formSubmitErrorHandling = () => {
     
     const radioInputs = $('input:checked').length;
 
-    // if all form fields have not been filled out, then alert the user
-    // else, store the users selections and run the remaining functions
+    // IF all form fields have not been filled out, then alert the user. ELSE, store the users selections and run the usersChoices function
     if (radioInputs < 4) {
+
         //NOTE: change this to appended box vs alert
-        alert(`Oh no! Looks like you haven't answered all of the questions, furriend! Please complete all of the questions to find your ideal dog breed!`)
+        alert(`Oh no! Looks like you haven't answered all of the questions, furriend! Please complete all of the questions to find your ideal dog breed!`);
+
     } else {
+
         //store the users selections in variables
         const usersSizeChoice = $('input[name=size]:checked').val();
         const usersActivityChoice = $('input[name=activity]:checked').val();
         const usersAttentionChoice = $('input[name=attention]:checked').val();
         const usersTrainingChoice = $('input[name=training]:checked').val();
         console.log('SIZE: ', usersSizeChoice);
-        console.log('ACTIVITY: ', usersActivityChoice);
-        console.log('ATTENTION: ', usersAttentionChoice);
-        console.log('TRAINING: ', usersTrainingChoice);
 
-        // run the following functions
+        // run the function to find the dog breed object that corresponds to the users choices
         dogBreedApp.usersChoices(usersSizeChoice, usersActivityChoice, usersAttentionChoice, usersTrainingChoice);
-        dogBreedApp.scrollToResults();
     }
 };
+
+
 
 // (5) USER CHOICES --> OBJECT CHOICE FUNCTION (take the user's choices and filter through the dogSize object to find and return a match)
 dogBreedApp.usersChoices = (size, activity, attention, training) => {
@@ -363,6 +379,7 @@ dogBreedApp.usersChoices = (size, activity, attention, training) => {
         // filter through that dog size array and find the dog breed object with activity, attention, and training levels that match the user's choices
         if (activity === dogSizeOption.activityLevel && attention === dogSizeOption.attentionLevel && training === dogSizeOption.trainingLevel) {
 
+            // store the breed object's information in variables
             const usersBreedName = dogSizeOption.breed;
             const usersBreedImage = dogSizeOption.image;
             const usersBreedImageAlt = dogSizeOption.alt;
@@ -373,32 +390,46 @@ dogBreedApp.usersChoices = (size, activity, attention, training) => {
             const usersBreedMoreInfo = dogSizeOption.learnMore;
             console.log('DOG BREED OBJECT: ', usersBreedName);
 
+            // run the display and scroll functions
             dogBreedApp.displayBreedPhoto(usersBreedImage, usersBreedImageAlt);
-            dogBreedApp.displayBreedText();
+            dogBreedApp.displayBreedText(usersBreedTemperament, usersBreedLifeExpect, usersBreedGroup, usersSimilarBreeds, usersBreedMoreInfo);
+            dogBreedApp.scrollToResults();
+            dogBreedApp.chooseDifferentTraits();
         };
     });
 };
 
+
+
 // (6) DISPLAY USER'S DOG BREED PHOTO FUNCTION
 dogBreedApp.displayBreedPhoto = (imageSource, imageAlt) => {
+    // style the breed photo
+    const image = $('<img>').attr('width', '50%').attr('src', imageSource).attr('alt', imageAlt).css({ border: '1px solid black', padding: '20px' });
+    
     // append the styled breed photo to the results section
-    // const image = $('<img>').attr('src', imageSource).attr('alt', imageAlt).css({ border: '1px solid black', padding: '20px' });
-
-    // $('.breedPhoto').append(image);
+    $('.results-image').append(image);
 };
 
-// (7) DISPLAY USER'S DOG BREED INFO FUNCTION
-dogBreedApp.displayBreedText = () => {
+
+
+// (7) DISPLAY USER'S DOG BREED TEXT FUNCTION
+dogBreedApp.displayBreedText = (temperament, lifeExpec, group, similarBreeds, moreInfo) => {
+    
     // append the styled breed name and information to the results section
+    // use forEach to display arrays (temp & similar breeds)
 };
+
+
 
 // (8) SCROLL TO RESULTS FUNCTION 
 dogBreedApp.scrollToResults = () => {
     // automatically scroll the page down to the results displayed in the results section
-    // $('html').animate({
-    //     scrollTop: $('.results').offset().top
-    // }, 1000);
+    $('html').animate({
+        scrollTop: $('.results').offset().top
+    }, 1000);
 };
+
+
 
 // (9) RESET FUNCTION
 dogBreedApp.chooseDifferentTraits = () => {
@@ -406,18 +437,15 @@ dogBreedApp.chooseDifferentTraits = () => {
     // add an event listener to button so that, when it's clicked, it (a) removes the appended content, (b) scrolls to the top of the page to allow user to choose new options
 };
 
+
+
 // (2) INIT FUNCTION
 dogBreedApp.init = () => {
-    // (3) EVENT LISTENER - listen for when the user submits the form
-    $('form').on('submit', function (event) {
-        // prevent default form behaviour (page refresh)
-        event.preventDefault();
-        console.log('form has been submitted!')
-
-        // run the form submit error handling function 
-        dogBreedApp.formSubmitErrorHandling();
-    });
+    // upon app initialization, run the event listener function
+    dogBreedApp.eventListener();
 };
+
+
 
 // (1) DOCUMENT READY FUNCTION
 $(function () {
