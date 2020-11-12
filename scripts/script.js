@@ -8,7 +8,7 @@ dogBreedApp.dogSize = {
             activityLevel: 'high',
             attentionLevel: 'low',
             trainingLevel: 'high',
-            image: './assets/parson-russel-terrier.jpg',
+            image: './assets/parson-russell-terrier.jpg',
             alt: 'A parson russell terrier with its mouth open.',
             breed: 'Parson Russell Terrier',
             temperament: ['Independent', 'Athletic', 'Clever'],
@@ -60,7 +60,7 @@ dogBreedApp.dogSize = {
             activityLevel: 'low',
             attentionLevel: 'high',
             trainingLevel: 'low',
-            image: './assets/parson-russel-terrier.jpg',
+            image: './assets/pug.jpg',
             alt: 'A pug sitting down.',
             breed: 'Pug',
             temperament: ['Loving', 'Mischievous', 'Charming'],
@@ -325,9 +325,41 @@ dogBreedApp.dogSize = {
 };
 
 
+// (3) RANDOMIZED BREED FUNCTION
+dogBreedApp.randomizedBreed = () => {
 
-// (3) EVENT LISTENER FUNCTION 
-dogBreedApp.eventListener = () => {
+    // function to return a random integer between a designated minimum and maximum number
+    function randomInteger(min, max) {
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+    
+    // choose a random dog size array by a) choosing a random number between 0 and 2 (0, 1 or 2), then b) defining the 'size' variable based on the random number passed in
+    let size = randomInteger(0, 2);
+    randomSizeChoice = (size === 0) ? "small" : (size === 1) ? "medium" : "large";
+    
+    // choose a random activity level using the same logic as above
+    let activity = randomInteger(0, 1);
+    randomActivityChoice = (activity === 0) ? "low" : "high";
+
+    // choose a random attention level using the same logic as above
+    let attention = randomInteger(0, 1);
+    randomAttentionChoice = (attention === 0) ? "low" : "high";
+
+    // choose a random training level using the same logic as above
+    let training = randomInteger(0, 1);
+    randomTrainingChoice = (training === 0) ? "low" : "high";
+
+
+    // when the user clicks the 'random breed' button, display a random breed in the results section
+    $('.breed-randomizer').on('click', function () {
+        // run the function to find the dog breed object that corresponds to the random choices
+        dogBreedApp.usersChoices(randomSizeChoice, randomActivityChoice, randomAttentionChoice, randomTrainingChoice);
+    });
+};
+
+
+// (4) FORM SUBMIT EVENT LISTENER FUNCTION 
+dogBreedApp.formSubmitEventListener = () => {
     // listen for when the user submits the form
     $('form').on('submit', function (event) {
         // prevent default form behaviour (page refresh)
@@ -340,7 +372,7 @@ dogBreedApp.eventListener = () => {
 
 
 
-// (4) FORM SUBMIT ERROR HANDLING FUNCTION
+// (5) FORM SUBMIT ERROR HANDLING FUNCTION
 dogBreedApp.formSubmitErrorHandling = () => {
     
     const radioInputs = $('input:checked').length;
@@ -367,7 +399,7 @@ dogBreedApp.formSubmitErrorHandling = () => {
 
 
 
-// (5) USER CHOICES --> OBJECT CHOICE FUNCTION (take the user's choices and filter through the dogSize object to find and return a match)
+// (6) FUNCTION TO PICK DOG BREED BASED ON USER'S CHOICE (take the user's choices and filter through the dogSize object to find and return a match)
 dogBreedApp.usersChoices = (size, activity, attention, training) => {
 
     // find the dog size array that matches the user's size choice
@@ -391,33 +423,27 @@ dogBreedApp.usersChoices = (size, activity, attention, training) => {
             console.log('DOG BREED OBJECT: ', usersBreedName);
 
             // run the display and scroll functions
-            dogBreedApp.displayBreedPhoto(usersBreedImage, usersBreedImageAlt);
-            dogBreedApp.displayBreedText(usersBreedTemperament, usersBreedLifeExpect, usersBreedGroup, usersSimilarBreeds, usersBreedMoreInfo);
-            dogBreedApp.scrollToResults();
+            dogBreedApp.displayBreedInfo(usersBreedImage, usersBreedImageAlt, usersBreedTemperament, usersBreedLifeExpect, usersBreedGroup, usersSimilarBreeds, usersBreedMoreInfo);
             dogBreedApp.chooseDifferentTraits();
+            dogBreedApp.scrollToResults();
         };
     });
 };
 
 
 
-// (6) DISPLAY USER'S DOG BREED PHOTO FUNCTION
-dogBreedApp.displayBreedPhoto = (imageSource, imageAlt) => {
+// (7) DISPLAY USER'S DOG BREED INFORMATION FUNCTION
+dogBreedApp.displayBreedInfo = (imageSource, imageAlt, temperament, lifeExpec, group, similarBreeds, moreInfo) => {
     // style the breed photo
     const image = $('<img>').attr('width', '50%').attr('src', imageSource).attr('alt', imageAlt).css({ border: '1px solid black', padding: '20px' });
-    
     // append the styled breed photo to the results section
     $('.results-image').append(image);
-};
 
 
-
-// (7) DISPLAY USER'S DOG BREED TEXT FUNCTION
-dogBreedApp.displayBreedText = (temperament, lifeExpec, group, similarBreeds, moreInfo) => {
-    
     // append the styled breed name and information to the results section
     // use forEach to display arrays (temp & similar breeds)
 };
+
 
 
 
@@ -425,24 +451,52 @@ dogBreedApp.displayBreedText = (temperament, lifeExpec, group, similarBreeds, mo
 dogBreedApp.scrollToResults = () => {
     // automatically scroll the page down to the results displayed in the results section
     $('html').animate({
-        scrollTop: $('.results').offset().top
-    }, 1000);
+        scrollTop: $('#results').offset().top
+    }, 1000, `swing`);
 };
 
 
 
 // (9) RESET FUNCTION
 dogBreedApp.chooseDifferentTraits = () => {
-    // append a 'choose different traits' button underneath displayed image and text
-    // add an event listener to button so that, when it's clicked, it (a) removes the appended content, (b) scrolls to the top of the page to allow user to choose new options
+    // append a 'choose different traits' button beneath displayed image and text
+    const chooseDifferentTraits = $('<button>').text('Choose Different Traits');
+    $('.different-traits-button').append(chooseDifferentTraits);
+
+    // when the 'choose different traits' button is clicked:
+    $('.different-traits-button').on('click', () => {
+
+        // (a) remove all appended content
+        $('.results-heading').empty();
+        $('.results-image').empty();
+        $('.temperament').empty();
+        $('.life-expec').empty();
+        $('.group').empty();
+        $('.similar-breeds').empty();
+        $('.learn-more').empty();
+        $('.different-traits-button').empty();
+
+        // (b) scroll to the top of the page to allow user to choose new options
+        dogBreedApp.scrollToTop();
+    });
+};
+
+
+
+// (10) SCROLL TO TOP OF PAGE FUNCTION
+dogBreedApp.scrollToTop = () => {
+    $('html, body').animate({
+        scrollTop: $('form').offset().top
+    }, 1000);
 };
 
 
 
 // (2) INIT FUNCTION
 dogBreedApp.init = () => {
-    // upon app initialization, run the event listener function
-    dogBreedApp.eventListener();
+    // upon app initialization, run the form submit event listener & randomized breed functions
+    dogBreedApp.formSubmitEventListener();
+    dogBreedApp.randomizedBreed();
 };
 
 
