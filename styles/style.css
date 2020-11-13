@@ -277,9 +277,22 @@ img {
 }
 
 form {
-  margin-bottom: 800px;
+  margin-bottom: 100px;
 }
 
 fieldset {
   border: none;
+}
+
+.results-image-and-text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border: 1px solid blue;
+}
+
+.results-image,
+.results-text {
+  border: 1px solid red;
+  width: calc(100% / 2);
 }

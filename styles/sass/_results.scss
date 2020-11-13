@@ -8,6 +8,18 @@
 //     width: auto;
 // }
 
+
+.results-image-and-text {
+    display: flex;
+    border: 1px solid blue;
+}
+
+.results-image,
+.results-text {
+    border: 1px solid red;
+    width: calc(100% / 2);
+}
+
 // <section id="results">
 
 //     <div class="results-heading">

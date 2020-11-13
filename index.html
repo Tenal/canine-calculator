@@ -12,159 +12,169 @@
 </head>
 
 <body>
-    <!-- HEADER STARTS HERE -->
-    <header>
-        <h1>Canine Calculator</h1>
-        <button class="breed-randomizer">Get me a Random Breed!</button>
-    </header>
+    <div class="wrapper">
+        <!-- HEADER STARTS HERE -->
+        <header>
+            <h1>Canine Calculator</h1>
+            <button class="breed-randomizer">Get me a Random Breed!</button>
+        </header>
 
-    <main>
+        <main>
 
-        <!-- FORM STARTS HERE -->
-        <form action="">
-            <!-- FIRST QUESTION STARTS HERE -->
-            <fieldset>
-                <legend>
-                    <h2>Dog Size...</h2>
-                </legend>
+            <!-- FORM STARTS HERE -->
+            <form action="">
+                <!-- FIRST QUESTION STARTS HERE -->
+                <fieldset>
+                    <legend>
+                        <h2>Dog Size...</h2>
+                    </legend>
+                    <div>
+                        <div>
+                            <img src="" alt="">
+                            <input type="radio" name="size" id="small" value="small">
+                            <label for="small">Small</label>
+                            <p class="sr-only">Click here if you want a small dog breed.</p>
+                        </div>
+                        <div>
+                            <img src="" alt="">
+                            <input type="radio" name="size" id="medium" value="medium">
+                            <label for="medium">Medium</label>
+                            <p class="sr-only">Click here if you want a medium dog breed.</p>
+                        </div>
+                        <div>
+                            <img src="" alt="">
+                            <input type="radio" name="size" id="large" value="large">
+                            <label for="large">Large</label>
+                            <p class="sr-only">Click here if you want a large dog breed.</p>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <!-- SECOND QUESTION STARTS HERE -->
+                <fieldset>
+                    <legend>
+                        <h2>Activity Level...</h2>
+                    </legend>
+                    <div>
+                        <div>
+                            <img src="" alt="">
+                            <input type="radio" name="activity" id="low" value="low">
+                            <label for="low">Low</label>
+                            <p class="sr-only">Click here if you want a calm dog breed requiring around one hour of exercise daily.</p>
+                        </div>
+                        <div>
+                            <img src="" alt="">
+                            <input type="radio" name="activity" id="high" value="high">
+                            <label for="high">High</label>
+                            <p class="sr-only">Click here if you want an energetic dog breed requiring over two hours of exercise daily.</p>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <!-- THIRD QUESTION STARTS HERE -->
+                <fieldset>
+                    <legend>
+                        <h2>Attention Level...</h2>
+                    </legend>
+                    <div>
+                        <div>
+                            <img src="" alt="">
+                            <input type="radio" name="attention" id="low" value="low">
+                            <label for="low">Low</label>
+                            <p class="sr-only">Click here if you want an independent dog breed more suitable for owners who will be out of the house over forty hours a week.</p>
+                        </div>
+                        <div>
+                            <img src="" alt="">
+                            <input type="radio" name="attention" id="high" value="high">
+                            <label for="high">High</label>
+                            <p class="sr-only">Click here if you want an attentive dog breed more suitable for owners who will be out of the house under forty hours a week.</p>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <!-- FOURTH QUESTION STARTS HERE -->
+                <fieldset>
+                    <legend>
+                        <h2>Training Level...</h2>
+                    </legend>
+                    <div>
+                        <div>
+                            <img src="" alt="">
+                            <input type="radio" name="training" id="low" value="low">
+                            <label for="low">Low</label>
+                            <p class="sr-only">Click here if you're relaxed about rules and only plan on teaching your dog the basics.</p>
+                        </div>
+                        <div>
+                            <img src="" alt="">
+                            <input type="radio" name="training" id="high" value="high">
+                            <label for="high">High</label>
+                            <p class="sr-only">Click here if general obedience is important to you and you plan on teaching your dog as many cool tricks as possible.</p>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <!-- FORM SUBMIT STARTS HERE -->
                 <div>
-                    <div>
-                        <img src="" alt="">
-                        <input type="radio" name="size" id="small" value="small">
-                        <label for="small">Small</label>
-                        <p class="sr-only">Click here if you want a small dog breed.</p>
-                    </div>
-                    <div>
-                        <img src="" alt="">
-                        <input type="radio" name="size" id="medium" value="medium">
-                        <label for="medium">Medium</label>
-                        <p class="sr-only">Click here if you want a medium dog breed.</p>
-                    </div>
-                    <div>
-                        <img src="" alt="">
-                        <input type="radio" name="size" id="large" value="large">
-                        <label for="large">Large</label>
-                        <p class="sr-only">Click here if you want a large dog breed.</p>
+                    <button type="submit">Fetch my Dog!</button>
+                </div>
+
+            </form>
+
+            <!-- DYNAMIC CONTENT STARTS HERE -->
+            <section id="results">
+
+                <div class="results-heading">
+                    <!-- dynamically appended heading (breed name) -->
+                </div>
+
+                <div class="results-container">
+                    <div class="results-image-and-text">
+                        <div class="results-image">
+                            <!-- dynamically appended image (breed image) -->
+                        </div>
+                        <div class="results-text">
+                            <div class="temperament">
+                                <h3>Temperament</h3>
+                                <ul id="temperament-list">
+                                    <!-- dynamically appended text (breed temperament) -->
+                                </ul>
+                            </div>
+                            <div class="life-expec">
+                                <h3>Life Expectancy</h3>
+                                <!-- dynamically appended text (breed life expectancy) -->
+                            </div>
+                            <div class="group">
+                                <h3>Breed Group</h3>
+                                <!-- dynamically appended text (breed group) -->
+                            </div>
+                            <div class="similar-breeds">
+                                <h3>Similar Breeds</h3>
+                                <ul id="similar-breed-list">
+                                    <!-- dynamically appended text (similar breed) -->
+                                </ul>
+                            </div>
+                            <div class="learn-more">
+                                <!-- dynamically appended text (learn more button) -->
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </fieldset>
 
-            <!-- SECOND QUESTION STARTS HERE -->
-            <fieldset>
-                <legend>
-                    <h2>Activity Level...</h2>
-                </legend>
-                <div>
-                    <div>
-                        <img src="" alt="">
-                        <input type="radio" name="activity" id="low" value="low">
-                        <label for="low">Low</label>
-                        <p class="sr-only">Click here if you want a calm dog breed requiring around one hour of exercise daily.</p>
-                    </div>
-                    <div>
-                        <img src="" alt="">
-                        <input type="radio" name="activity" id="high" value="high">
-                        <label for="high">High</label>
-                        <p class="sr-only">Click here if you want an energetic dog breed requiring over two hours of exercise daily.</p>
-                    </div>
+                <div class="different-traits-button">
+                    <!-- dynamically appended reset button -->
                 </div>
-            </fieldset>
 
-            <!-- THIRD QUESTION STARTS HERE -->
-            <fieldset>
-                <legend>
-                    <h2>Attention Level...</h2>
-                </legend>
-                <div>
-                    <div>
-                        <img src="" alt="">
-                        <input type="radio" name="attention" id="low" value="low">
-                        <label for="low">Low</label>
-                        <p class="sr-only">Click here if you want an independent dog breed more suitable for owners who will be out of the house over forty hours a week.</p>
-                    </div>
-                    <div>
-                        <img src="" alt="">
-                        <input type="radio" name="attention" id="high" value="high">
-                        <label for="high">High</label>
-                        <p class="sr-only">Click here if you want an attentive dog breed more suitable for owners who will be out of the house under forty hours a week.</p>
-                    </div>
-                </div>
-            </fieldset>
+            </section>
+        </main>
 
-            <!-- FOURTH QUESTION STARTS HERE -->
-            <fieldset>
-                <legend>
-                    <h2>Training Level...</h2>
-                </legend>
-                <div>
-                    <div>
-                        <img src="" alt="">
-                        <input type="radio" name="training" id="low" value="low">
-                        <label for="low">Low</label>
-                        <p class="sr-only">Click here if you're relaxed about rules and only plan on teaching your dog the basics.</p>
-                    </div>
-                    <div>
-                        <img src="" alt="">
-                        <input type="radio" name="training" id="high" value="high">
-                        <label for="high">High</label>
-                        <p class="sr-only">Click here if general obedience is important to you and you plan on teaching your dog as many cool tricks as possible.</p>
-                    </div>
-                </div>
-            </fieldset>
-
-            <!-- FORM SUBMIT STARTS HERE -->
+        <!-- FOOTER STARTS HERE -->
+        <footer>
             <div>
-                <button type="submit">Fetch my Dog!</button>
+                <p>&#169; Tenal Bourchier 2020 (made at <a href="https://junocollege.com/">Juno College</a>)</p>
+                <p>Dog photographs &#169; <a href="https://elkevogelsang.com/">Elke Vogelsang</a></p>
             </div>
-
-        </form>
-
-        <!-- DYNAMIC CONTENT STARTS HERE -->
-        <section id="results">
-
-            <div class="results-heading">
-                <!-- dynamically appended heading (breed name) -->
-            </div>
-
-            <div class="results-container">
-                <div class="results-image-and-text">
-                    <div class="results-image">
-                        <!-- dynamically appended image (breed image) -->
-                    </div>
-                    <div class="results-text">
-                        <div class="temperament">
-                            <!-- dynamically appended text (breed temperament) -->
-                        </div>
-                        <div class="life-expec">
-                            <!-- dynamically appended text (breed life expectancy) -->
-                        </div>
-                        <div class="group">
-                            <!-- dynamically appended text (breed group) -->
-                        </div>
-                        <div class="similar-breeds">
-                            <!-- dynamically appended text (similar breed) -->
-                        </div>
-                        <div class="learn-more">
-                            <!-- dynamically appended text (learn more button) -->
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="different-traits-button">
-                <!-- dynamically appended reset button -->
-            </div>
-
-        </section>
-    </main>
-
-    <!-- FOOTER STARTS HERE -->
-    <footer>
-        <div>
-            <p>&#169; Tenal Bourchier 2020 (made at <a href="https://junocollege.com/">Juno College</a>)</p>
-            <p>Dog photographs &#169; <a href="https://elkevogelsang.com/">Elke Vogelsang</a></p>
-        </div>
-    </footer>
+        </footer>
+    </div>
 
     <script src='https://code.jquery.com/jquery-3.4.0.min.js' integrity='sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg=' crossorigin='anonymous'></script>
     

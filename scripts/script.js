@@ -325,7 +325,7 @@ dogBreedApp.dogSize = {
 };
 
 
-// (3) RANDOMIZED BREED FUNCTION
+// // (3) RANDOMIZED BREED FUNCTION
 dogBreedApp.randomizedBreed = () => {
 
     // function to return a random integer between a designated minimum and maximum number
@@ -356,6 +356,7 @@ dogBreedApp.randomizedBreed = () => {
         dogBreedApp.usersChoices(randomSizeChoice, randomActivityChoice, randomAttentionChoice, randomTrainingChoice);
     });
 };
+
 
 
 // (4) FORM SUBMIT EVENT LISTENER FUNCTION 
@@ -420,10 +421,19 @@ dogBreedApp.usersChoices = (size, activity, attention, training) => {
             const usersBreedGroup = dogSizeOption.group;
             const usersSimilarBreeds = dogSizeOption.similarBreeds;
             const usersBreedMoreInfo = dogSizeOption.learnMore;
-            console.log('DOG BREED OBJECT: ', usersBreedName);
+
+            // remove appended content if user makes new choices when submitting the form again
+            $('.results-heading').empty();
+            $('.results-image').empty();
+            $('#temperament-list').empty();
+            $('.life-expec p').empty();
+            $('.group p').empty();
+            $('#similar-breed-list').empty();
+            $('.learn-more').empty();
+            $('.different-traits-button').empty();
 
             // run the display and scroll functions
-            dogBreedApp.displayBreedInfo(usersBreedImage, usersBreedImageAlt, usersBreedTemperament, usersBreedLifeExpect, usersBreedGroup, usersSimilarBreeds, usersBreedMoreInfo);
+            dogBreedApp.displayBreedInfo(usersBreedName, usersBreedImage, usersBreedImageAlt, usersBreedTemperament, usersBreedLifeExpect, usersBreedGroup, usersSimilarBreeds, usersBreedMoreInfo);
             dogBreedApp.chooseDifferentTraits();
             dogBreedApp.scrollToResults();
         };
@@ -433,15 +443,23 @@ dogBreedApp.usersChoices = (size, activity, attention, training) => {
 
 
 // (7) DISPLAY USER'S DOG BREED INFORMATION FUNCTION
-dogBreedApp.displayBreedInfo = (imageSource, imageAlt, temperament, lifeExpec, group, similarBreeds, moreInfo) => {
-    // style the breed photo
-    const image = $('<img>').attr('width', '50%').attr('src', imageSource).attr('alt', imageAlt).css({ border: '1px solid black', padding: '20px' });
-    // append the styled breed photo to the results section
+dogBreedApp.displayBreedInfo = (breedName, imageSource, imageAlt, temperament, lifeExpec, group, similarBreeds, moreInfo) => {
+    // style & append breed photo to the results section
+    const image = $('<img>').attr('width', '95%').attr('src', imageSource).attr('alt', imageAlt).css({ border: '1px solid black', padding: '20px' });
     $('.results-image').append(image);
 
-
-    // append the styled breed name and information to the results section
-    // use forEach to display arrays (temp & similar breeds)
+    // style & append breed name and information to the results section
+    $('.results-heading').append(`<h2>${breedName}</h2>`);
+    $('.results-image').append(image);
+    temperament.forEach((trait) => {
+        $('#temperament-list').append(`<li>${trait}</li>`)
+    });
+    $('.life-expec').append(`<p>${lifeExpec}</p>`);
+    $('.group').append(`<p>${group}</p>`);
+    similarBreeds.forEach((breed) => {
+        $('#similar-breed-list').append(`<li>${breed}</li>`)
+    });
+    $('.learn-more').append(moreInfo);
 };
 
 
@@ -469,10 +487,10 @@ dogBreedApp.chooseDifferentTraits = () => {
         // (a) remove all appended content
         $('.results-heading').empty();
         $('.results-image').empty();
-        $('.temperament').empty();
-        $('.life-expec').empty();
-        $('.group').empty();
-        $('.similar-breeds').empty();
+        $('#temperament-list').empty();
+        $('.life-expec p').empty();
+        $('.group p').empty();
+        $('#similar-breed-list').empty();
         $('.learn-more').empty();
         $('.different-traits-button').empty();
 
