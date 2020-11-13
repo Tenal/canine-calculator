@@ -12,12 +12,15 @@
 </head>
 
 <body>
+
     <div class="wrapper">
+
         <!-- HEADER STARTS HERE -->
         <header>
             <h1>Canine Calculator</h1>
             <button class="breed-randomizer">Get me a Random Breed!</button>
         </header>
+
 
         <main>
 
@@ -28,21 +31,21 @@
                     <legend>
                         <h2>Dog Size...</h2>
                     </legend>
-                    <div>
-                        <div>
-                            <img src="" alt="">
+                    <div class="three-options-container">
+                        <div class="option">
+                            <img src="" alt="image here">
                             <input type="radio" name="size" id="small" value="small">
                             <label for="small">Small</label>
                             <p class="sr-only">Click here if you want a small dog breed.</p>
                         </div>
-                        <div>
-                            <img src="" alt="">
+                        <div class="option">
+                            <img src="" alt="image here">
                             <input type="radio" name="size" id="medium" value="medium">
                             <label for="medium">Medium</label>
                             <p class="sr-only">Click here if you want a medium dog breed.</p>
                         </div>
-                        <div>
-                            <img src="" alt="">
+                        <div class="option">
+                            <img src="" alt="image here">
                             <input type="radio" name="size" id="large" value="large">
                             <label for="large">Large</label>
                             <p class="sr-only">Click here if you want a large dog breed.</p>
@@ -55,17 +58,17 @@
                     <legend>
                         <h2>Activity Level...</h2>
                     </legend>
-                    <div>
-                        <div>
-                            <img src="" alt="">
-                            <input type="radio" name="activity" id="low" value="low">
-                            <label for="low">Low</label>
+                    <div class="two-options-container">
+                        <div class="option">
+                            <img src="" alt="image here">
+                            <input type="radio" name="activity" id="low-activity" value="low">
+                            <label for="low-activity">Low</label>
                             <p class="sr-only">Click here if you want a calm dog breed requiring around one hour of exercise daily.</p>
                         </div>
-                        <div>
-                            <img src="" alt="">
-                            <input type="radio" name="activity" id="high" value="high">
-                            <label for="high">High</label>
+                        <div class="option">
+                            <img src="" alt="image here">
+                            <input type="radio" name="activity" id="high-activity" value="high">
+                            <label for="high-activity">High</label>
                             <p class="sr-only">Click here if you want an energetic dog breed requiring over two hours of exercise daily.</p>
                         </div>
                     </div>
@@ -76,17 +79,17 @@
                     <legend>
                         <h2>Attention Level...</h2>
                     </legend>
-                    <div>
-                        <div>
-                            <img src="" alt="">
-                            <input type="radio" name="attention" id="low" value="low">
-                            <label for="low">Low</label>
+                    <div class="two-options-container">
+                        <div class="option">
+                            <img src="" alt="image here">
+                            <input type="radio" name="attention" id="low-attention" value="low">
+                            <label for="low-attention">Low</label>
                             <p class="sr-only">Click here if you want an independent dog breed more suitable for owners who will be out of the house over forty hours a week.</p>
                         </div>
-                        <div>
-                            <img src="" alt="">
-                            <input type="radio" name="attention" id="high" value="high">
-                            <label for="high">High</label>
+                        <div class="option">
+                            <img src="" alt="image here">
+                            <input type="radio" name="attention" id="high-attention" value="high">
+                            <label for="high-attention">High</label>
                             <p class="sr-only">Click here if you want an attentive dog breed more suitable for owners who will be out of the house under forty hours a week.</p>
                         </div>
                     </div>
@@ -97,17 +100,17 @@
                     <legend>
                         <h2>Training Level...</h2>
                     </legend>
-                    <div>
-                        <div>
-                            <img src="" alt="">
-                            <input type="radio" name="training" id="low" value="low">
-                            <label for="low">Low</label>
+                    <div class="two-options-container">
+                        <div class="option">
+                            <img src="" alt="image here">
+                            <input type="radio" name="training" id="low-trainability" value="low">
+                            <label for="low-trainability">Low</label>
                             <p class="sr-only">Click here if you're relaxed about rules and only plan on teaching your dog the basics.</p>
                         </div>
-                        <div>
-                            <img src="" alt="">
-                            <input type="radio" name="training" id="high" value="high">
-                            <label for="high">High</label>
+                        <div class="option">
+                            <img src="" alt="image here">
+                            <input type="radio" name="training" id="high-trainability" value="high">
+                            <label for="high-trainability">High</label>
                             <p class="sr-only">Click here if general obedience is important to you and you plan on teaching your dog as many cool tricks as possible.</p>
                         </div>
                     </div>
@@ -120,11 +123,12 @@
 
             </form>
 
+
             <!-- DYNAMIC CONTENT STARTS HERE -->
             <section class="results" id="results">
 
                 <div class="results-heading">
-                    <h2 class="results-title">You got a...</h2>
+                    <h2 class="results-title">Your perfect breed is a...</h2>
                     <!-- dynamically appended heading (breed name) -->
                 </div>
 
@@ -166,16 +170,19 @@
                 </div>
 
             </section>
+
         </main>
+
 
         <!-- FOOTER STARTS HERE -->
         <footer>
             <div>
                 <p>&#169; Tenal Bourchier 2020 (made at <a href="https://junocollege.com/">Juno College</a>)</p>
-                <p>Dog photographs &#169; <a href="https://elkevogelsang.com/">Elke Vogelsang</a></p>
+                <p>Dog photography &#169; <a href="https://elkevogelsang.com/">Elke Vogelsang</a></p>
             </div>
         </footer>
-    </div>
+
+    </div> <!-- wrapper ends here -->
 
     <script src='https://code.jquery.com/jquery-3.4.0.min.js' integrity='sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg=' crossorigin='anonymous'></script>
     

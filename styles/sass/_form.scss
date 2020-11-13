@@ -1,8 +1,50 @@
 form {
     margin-bottom: 100px;
+        fieldset {
+            border: none;
+            margin-bottom: 60px;
+                legend h2 {
+                    font-size: 2rem;
+                }
+                .three-options-container {
+                    display: flex;
+                    justify-content: space-between;
+                    padding: 20px 60px;
+                    margin-bottom: 50px;
+                }
+                .two-options-container {
+                    display: flex;
+                    justify-content: space-evenly;
+                    padding: 20px 0;
+                    margin-bottom: 50px;
+                }
+        }
 }
 
-fieldset {
-    border: none;
+.option {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+        label {
+            font-size: 2rem;
+            text-align: center;
+            background-color: $button;
+            border: 1px solid $font-colour;
+            width: 100px;
+            padding: 15px 0;
+            margin-top: 20px;
+                &:hover {
+                    background-color: $button-hover;
+                }
+        }
+        input[type=radio] {
+            position: absolute;
+            opacity: 0;
+                &:checked + label,
+                &:checked + label,
+                &:checked + label {
+                    background-color: $button-hover;
+                }
+        }
 }
 

@@ -1,9 +1,9 @@
 // COLOUR VARIABLES --------------------
 $background-colour: #E3C4A8; // OR #E7DEC8 // OR #F0ECE3 // OR #596E79
 $secondary-color: #5B124A; // OR #E6B54F // OR #FEFEFF
-$button-colour: #ABC5D2;
-$button-hover-colour: #7397AF;
-$button-clicked-colour: #142541;
+$button: #ABC5D2;
+$button-hover: #7397AF;
+$button-clicked: #142541;
 $font-colour: #000000;
 $secondary-font-colour: #ffffff;
 
@@ -27,6 +27,7 @@ html {
 
 body {
     background-color: $background-colour;
+    padding: 7.5% 0;
 }
 
 ul {
@@ -48,4 +49,6 @@ img {
     max-width: 1280px;
     width: 85%;
     margin: 0 auto;
+    padding: 20px;
+    border: 1px solid $font-colour;
 }

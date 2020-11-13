@@ -474,7 +474,7 @@ dogBreedApp.scrollToResults = () => {
     // automatically scroll the page down to the results displayed in the results section
     $('html').animate({
         scrollTop: $('#results').offset().top
-    }, 1000, `swing`);
+    }, 1000);
 };
 
 
@@ -509,7 +509,7 @@ dogBreedApp.chooseDifferentTraits = () => {
 // (10) SCROLL TO TOP OF PAGE FUNCTION
 dogBreedApp.scrollToTop = () => {
     $('html, body').animate({
-        scrollTop: $('form').offset().top
+        scrollTop: $('header').offset().top
     }, 1000);
 };
 
