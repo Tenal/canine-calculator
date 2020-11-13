@@ -393,10 +393,6 @@ form fieldset .two-options-container {
           align-items: center;
 }
 
-.results-title {
-  visibility: hidden;
-}
-
 .results-image-and-text {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -406,9 +402,51 @@ form fieldset .two-options-container {
           justify-content: center;
 }
 
-.results-image,
+.results-image-and-text .results-image,
+.results-image-and-text .results-text {
+  width: calc(100% / 2 - 100px);
+  margin: 0 25px;
+}
+
 .results-text {
-  width: 35%;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.results-text .results-title {
+  border: 1px solid #000000;
+  -webkit-box-shadow: 0 2px 2px #7397AF;
+          box-shadow: 0 2px 2px #7397AF;
+  background-color: #ABC5D2;
+  text-transform: uppercase;
+  font-size: 2.3rem;
+  line-height: 3.3rem;
+  letter-spacing: 0.6rem;
+  visibility: hidden;
+  margin-bottom: 10px;
+}
+
+.dynamic-heading {
+  font-size: 4rem;
+  margin-bottom: 20px;
+}
+
+.dynamic-breed {
+  color: #C95556;
+}
+
+.dynamic-text {
+  font-size: 2.0rem;
+  line-height: 2.6rem;
 }
 
 footer div {

@@ -1,65 +1,56 @@
-// DYNAMICALLY APPENDED RESULTS SECTION --------------------
-// #results {
-//     border: 1px solid red;
-// }
-
-// .results-image {
-//     box-shadow: 0 0 5px $font-colour;
-//     width: auto;
-// }
 .results {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.results-title {
-    visibility: hidden;
-}
 
 .results-image-and-text {
     display: flex;
     justify-content: center;
+        .results-image,
+        .results-text {
+            width: calc(100% / 2 - 100px);
+            margin: 0 25px;
+        }
 }
 
-.results-image,
+
 .results-text {
-    width: 35%;
+    // border: 1px solid red;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+        .results-title {
+            border: 1px solid $font-colour;
+            box-shadow: 0 2px 2px $button-hover;
+            background-color: $button;
+            text-transform: uppercase;
+            font-size: 2.3rem;
+            line-height: 3.3rem;
+            letter-spacing: 0.6rem;
+            visibility: hidden;
+            margin-bottom: 10px;
+        }
 }
 
-// <section id="results">
 
-//     <div class="results-heading">
-//         <!-- dynamically appended heading (breed name) -->
-//     </div>
+.dynamic-heading {
+    font-size: 4rem;
+    margin-bottom: 20px;
+}
 
-//     <div class="results-container">
-//         <div class="results-image-and-text">
-//             <div class="results-image">
-//                 <!-- dynamically appended image (breed image) -->
-//             </div>
-//             <div class="results-text">
-//                 <div class="temperament">
-//                     <!-- dynamically appended text (breed temperament) -->
-//                 </div>
-//                 <div class="life-expec">
-//                     <!-- dynamically appended text (breed life expectancy) -->
-//                 </div>
-//                 <div class="group">
-//                     <!-- dynamically appended text (breed group) -->
-//                 </div>
-//                 <div class="similar-breeds">
-//                     <!-- dynamically appended text (similar breed) -->
-//                 </div>
-//                 <div class="learn-more">
-//                     <!-- dynamically appended text (learn more button) -->
-//                 </div>
-//             </div>
-//         </div>
-//     </div>
+.dynamic-breed {
+    color: $button-active;
+}
 
-//     <div class="different-traits-button">
-//         <!-- dynamically appended reset button -->
-//     </div>
 
-// </section>
+.dynamic-text {
+    font-size: 2.0rem;
+    line-height: 2.6rem;
+}
+
+.dynamic-links {
+    // styling here for similar breeds &/or learn more links
+}

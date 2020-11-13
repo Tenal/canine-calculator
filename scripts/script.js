@@ -453,7 +453,7 @@ dogBreedApp.usersChoices = (size, activity, attention, training) => {
 
 // (8) DISPLAY USER'S DOG BREED INFORMATION FUNCTION
 dogBreedApp.displayBreedInfo = (breedName, imageSource, imageAlt, temperament, lifeExpec, group, similarBreeds, moreInfo) => {
-    // display results titles
+    // display hidden results titles
     $('.results-title').css({visibility: 'visible'});
 
     // style & append breed photo to the results section
@@ -461,16 +461,20 @@ dogBreedApp.displayBreedInfo = (breedName, imageSource, imageAlt, temperament, l
     $('.results-image').append(image);
 
     // style & append breed name and information to the results section
-    $('.results-heading').append(`<h2>${breedName}</h2>`);
-    $('.results-image').append(image);
+    $('.results-heading').append(`<h2 class="dynamic-heading">Your perfect breed is: <span class="dynamic-breed">${breedName}</span>!</h2>`);
+
     temperament.forEach((trait) => {
-        $('#temperament-list').append(`<li>${trait}</li>`)
+        $('#temperament-list').append(`<li class="dynamic-text">${trait}</li>`)
     });
-    $('.life-expec').append(`<p>${lifeExpec}</p>`);
-    $('.group').append(`<p>${group}</p>`);
+
+    $('.life-expec').append(`<p class="dynamic-text">${lifeExpec}</p>`);
+
+    $('.group').append(`<p class="dynamic-text">${group}</p>`);
+
     similarBreeds.forEach((breed) => {
-        $('#similar-breed-list').append(`<li>${breed}</li>`)
+        $('#similar-breed-list').append(`<li class="dynamic-text">${breed}</li>`)
     });
+
     $('.learn-more').append(moreInfo);
 };
 
