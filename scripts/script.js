@@ -491,6 +491,37 @@ dogBreedApp.scrollToResults = () => {
 
 
 
+
+
+
+
+// NEXT QUESTION EVENT LISTENER FUNCTION 
+dogBreedApp.nextQuestionEventListener = () => {
+    // listen for when the user submits the form
+    $('.next-question').on('click', function (event) {
+        // prevent default form behaviour (page refresh)
+        event.preventDefault();
+        console.log('form has been submitted!')
+        // run the form submit error handling function 
+        dogBreedApp.formSubmitErrorHandling();
+    });
+};
+
+
+// SCROLL TO NEXT QUESTION FUNCTION 
+dogBreedApp.scrollToNextQuestion = () => {
+    // automatically scroll the page down to the results displayed in the results section
+    $('html').animate({
+        scrollTop: $('#results').offset().top
+    }, 1000);
+};
+
+
+
+
+
+
+
 // (10) RESET FUNCTION
 dogBreedApp.chooseDifferentTraits = () => {
     // append a 'choose different traits' button beneath displayed image and text
