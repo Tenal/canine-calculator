@@ -8,3 +8,16 @@ header {
             margin-bottom: 100px;
         }
 }
+
+.generator-button {
+            font-size: 2rem;
+            text-align: center;
+            background-color: $button-primary;
+            border: 1px solid $font-colour;
+            padding: 15px 30px;
+            margin-top: 20px;
+            transition: 0.3s all;
+                &:hover {
+                    background-color: $button-active;
+                }
+        }

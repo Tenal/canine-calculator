@@ -1,8 +1,9 @@
 form {
     margin-bottom: 100px;
+    text-align: center;
         fieldset {
             border: none;
-            margin-bottom: 60px;
+            margin-bottom: 100px;
                 legend h2 {
                     font-size: 2rem;
                 }
@@ -10,13 +11,11 @@ form {
                     display: flex;
                     justify-content: space-between;
                     padding: 20px 60px;
-                    margin-bottom: 50px;
                 }
                 .two-options-container {
                     display: flex;
                     justify-content: space-evenly;
                     padding: 20px 0;
-                    margin-bottom: 50px;
                 }
         }
 }
@@ -30,11 +29,13 @@ form {
             text-align: center;
             background-color: $button;
             border: 1px solid $font-colour;
-            width: 100px;
+            width: 120px;
             padding: 15px 0;
             margin-top: 20px;
+            transition: 0.3s all;
                 &:hover {
                     background-color: $button-hover;
+                    letter-spacing: 3px;
                 }
         }
         input[type=radio] {
@@ -44,6 +45,7 @@ form {
                 &:checked + label,
                 &:checked + label {
                     background-color: $button-hover;
+                    letter-spacing: 3px;
                 }
         }
 }
