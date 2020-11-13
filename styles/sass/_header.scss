@@ -1,26 +1,65 @@
+// GENERAL HEADER STYLING ----------
 header {
-    height: 100vh;
-    text-align: center;
+    min-height: 100vh;
     padding-top: 30px;
-    background-image: url(../assets/pauline-loroy-U3aF7hgUSrk-unsplash.jpg);
+    background-image: url(../assets/header-banner.jpg);
     background-size: cover;
     background-attachment: fixed;
+    font-family: $body-font;
+    font-size: 1.5rem;
         h1 {
-            font-size: 10rem;
+            font-size: 8rem;
             text-align: center;
-            margin-bottom: 100px;
+            margin-bottom: 80px;
+            font-family: $heading-font;
+        }
+        div.text-container {
+            background-color: rgba(255, 255, 255, 0.5);
+            width: 30vw;
+            min-height: auto;
+            border: 1px solid $font-colour;
+            box-shadow: 0 0 10px $font-colour;
+            border-radius: 25px;
+            padding: 0 10px 20px 10px;
+            text-align: center;
+                p {
+                    margin-top: 17px;
+                    text-align: left;
+                }
         }
 }
 
+// BUTTON STYLING ----------
 .generator-button {
-            font-size: 2rem;
-            text-align: center;
-            background-color: $button-primary;
-            border: 1px solid $font-colour;
-            padding: 15px 30px;
-            margin-top: 20px;
-            transition: 0.3s all;
-                &:hover {
-                    background-color: $button-active;
-                }
+    font-size: 2rem;
+    text-align: center;
+    background-color: $button-primary;
+    border: 1px solid $font-colour;
+    padding: 10px 20px;
+    margin-top: 17px;
+    transition: 0.3s all;
+    cursor: pointer;
+        &:hover {
+            background-color: $button-active;
         }
+}
+
+// 'NEXT QUESTION' LINK STYLING ----------
+.start {
+    font-size: 2rem;
+    text-align: center;
+    background-color: $button;
+    border: 1px solid $font-colour;
+    margin-top: 17px;
+    padding: 10px 20px;
+    transition: 0.3s all;
+    cursor: pointer;
+        &:hover {
+            background-color: $button-hover;
+        }
+}
+
+.arrow {
+    margin-top: 10px;
+    font-size: 6rem;
+}

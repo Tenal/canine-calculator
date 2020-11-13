@@ -253,6 +253,7 @@ html {
 
 body {
   background-color: #E3C4A8;
+  font-family: "Roboto", sans-serif;
 }
 
 ul {
@@ -262,6 +263,7 @@ ul {
 a {
   text-decoration: none;
   color: inherit;
+  display: inline-block;
 }
 
 img {
@@ -277,18 +279,37 @@ img {
 }
 
 header {
-  height: 100vh;
-  text-align: center;
+  min-height: 100vh;
   padding-top: 30px;
-  background-image: url(../assets/pauline-loroy-U3aF7hgUSrk-unsplash.jpg);
+  background-image: url(../assets/header-banner.jpg);
   background-size: cover;
   background-attachment: fixed;
+  font-family: "Roboto", sans-serif;
+  font-size: 1.5rem;
 }
 
 header h1 {
-  font-size: 10rem;
+  font-size: 8rem;
   text-align: center;
-  margin-bottom: 100px;
+  margin-bottom: 80px;
+  font-family: "Domine", serif;
+}
+
+header div.text-container {
+  background-color: rgba(255, 255, 255, 0.5);
+  width: 30vw;
+  min-height: auto;
+  border: 1px solid #000000;
+  -webkit-box-shadow: 0 0 10px #000000;
+          box-shadow: 0 0 10px #000000;
+  border-radius: 25px;
+  padding: 0 10px 20px 10px;
+  text-align: center;
+}
+
+header div.text-container p {
+  margin-top: 17px;
+  text-align: left;
 }
 
 .generator-button {
@@ -296,14 +317,36 @@ header h1 {
   text-align: center;
   background-color: #D87071;
   border: 1px solid #000000;
-  padding: 15px 30px;
-  margin-top: 20px;
+  padding: 10px 20px;
+  margin-top: 17px;
   -webkit-transition: 0.3s all;
   transition: 0.3s all;
+  cursor: pointer;
 }
 
 .generator-button:hover {
   background-color: #C95556;
+}
+
+.start {
+  font-size: 2rem;
+  text-align: center;
+  background-color: #ABC5D2;
+  border: 1px solid #000000;
+  margin-top: 17px;
+  padding: 10px 20px;
+  -webkit-transition: 0.3s all;
+  transition: 0.3s all;
+  cursor: pointer;
+}
+
+.start:hover {
+  background-color: #7397AF;
+}
+
+.arrow {
+  margin-top: 10px;
+  font-size: 6rem;
 }
 
 form {
@@ -312,11 +355,11 @@ form {
 
 form fieldset {
   border: none;
-  border: 1px solid red;
 }
 
 form fieldset legend h2 {
-  font-size: 2rem;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
 }
 
 form fieldset .three-options-container {
@@ -339,8 +382,7 @@ form fieldset .two-options-container {
   padding: 20px 0;
 }
 
-section {
-  border: 2px solid green;
+.form-section {
   height: 100vh;
   padding: 30px 0;
   display: -webkit-box;
@@ -378,6 +420,7 @@ section {
 
 .option label {
   font-size: 2rem;
+  text-transform: uppercase;
   text-align: center;
   background-color: #ABC5D2;
   border: 1px solid #000000;
@@ -386,6 +429,7 @@ section {
   margin-top: 40px;
   -webkit-transition: 0.3s all;
   transition: 0.3s all;
+  cursor: pointer;
 }
 
 .option label:hover {
@@ -472,6 +516,12 @@ section {
 .dynamic-text {
   font-size: 2.0rem;
   line-height: 2.6rem;
+}
+
+footer {
+  background-color: #D87071;
+  margin-top: 60px;
+  padding: 10px 0;
 }
 
 footer div {

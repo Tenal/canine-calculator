@@ -5,35 +5,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Canine Calculator</title>
-    <!-- <link rel="icon" type="image" href="./styles/assets/favicon.svg"> -->
     <link rel="stylesheet" href="./styles/style.css">
-    <!-- <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Pompiere&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/08b596cacd.js" crossorigin="anonymous"></script> -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Domine:wght@400;700&family=Roboto:wght@400;700&display=swap"
+        rel="stylesheet">
+    <script src="https://kit.fontawesome.com/08b596cacd.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
 
-    
     <!-- HEADER STARTS HERE -->
     <header>
-        <h1>Canine Calculator</h1>
-        <p>blah blah blah...</p>
-        <p>blah blah blah...</p>
-        <button class="breed-randomizer generator-button">Get me a Random Breed!</button>
-        <a class="scroll" href="#first-question">First Question</a>
+        <div class="wrapper">
+            <h1>Canine Calculator</h1>
+            <div class="text-container">
+                <p>Are you ready to find a new furry friend, but aren't sure what breed suits your lifestyle?</p>
+                <p>We'll help you find your perfect canine companion! All you need to do is answer 4 questions!</p>
+                <p>To get started, click on the button below:</p>
+                <a class="scroll start" href="#first-question">Answer Questions</a>
+                <p>If you'd prefer to forgo the questions and just want us to show you a breed to start your search, click below:</p>
+                <button class="breed-randomizer generator-button">Get me a Random Breed</button>
+            </div>
+        </div>
     </header>
-    
-    
+
     <div class="wrapper">
         <main>
 
             <!-- FORM STARTS HERE -->
             <form action="">
                 <!-- FIRST QUESTION STARTS HERE -->
-                <section id="first-question">
+                <section id="first-question" class="form-section odd-section">
                     <fieldset>
                         <legend>
-                            <h2>Dog Size...</h2>
+                            <h2>What's your size preference for your furry friend?</h2>
                         </legend>
                         <div class="three-options-container">
                             <div class="option">
@@ -62,15 +67,15 @@
                                 <p class="sr-only">Click here if you want a large dog breed.</p>
                             </div>
                         </div>
-                        <a class="scroll" href="#second-question">NEXT QUESTION</a>
+                        <a class="scroll arrow" href="#second-question"><i class="fas fa-chevron-down"></i></a>
                     </fieldset>
                 </section>
 
                 <!-- SECOND QUESTION STARTS HERE -->
-                <section id="second-question">
+                <section id="second-question" class="form-section">
                     <fieldset>
                         <legend>
-                            <h2>Activity Level...</h2>
+                            <h2>How energetic do you want your puppy pal to be?</h2>
                         </legend>
                         <div class="two-options-container">
                             <div class="option">
@@ -90,15 +95,15 @@
                                 <p class="sr-only">Click here if you want an energetic dog breed requiring over two hours of exercise daily.</p>
                             </div>
                         </div>
-                        <a class="scroll" href="#third-question">NEXT QUESTION</a>
+                        <a class="scroll arrow" href="#third-question"><i class="fas fa-chevron-down"></i></a>
                     </fieldset>
                 </section>
 
                 <!-- THIRD QUESTION STARTS HERE -->
-                <section id="third-question">
+                <section id="third-question" class="form-section odd-section">
                     <fieldset>
                         <legend>
-                            <h2>Attention Level...</h2>
+                            <h2>How affectionate do you want your canine companion to be?</h2>
                         </legend>
                         <div class="two-options-container">
                             <div class="option">
@@ -118,15 +123,15 @@
                                 <p class="sr-only">Click here if you want an attentive dog breed more suitable for owners who will be out of the house under forty hours a week.</p>
                             </div>
                         </div>
-                        <a class="scroll" href="#fourth-question">NEXT QUESTION</a>
+                        <a class="scroll arrow" href="#fourth-question"><i class="fas fa-chevron-down"></i></a>
                     </fieldset>
                 </section>
 
                 <!-- FOURTH QUESTION STARTS HERE -->
-                <section id="fourth-question">
+                <section id="fourth-question" class="form-section">
                     <fieldset>
                         <legend>
-                            <h2>Training Level...</h2>
+                            <h2>How trainable would you like your dapper dog to be?</h2>
                         </legend>
                         <div class="two-options-container">
                             <div class="option">
@@ -147,7 +152,7 @@
                             </div>
                         </div>
                     </fieldset>
-    
+
                     <!-- FORM SUBMIT STARTS HERE -->
                     <div>
                         <button type="submit" class="generator-button">Fetch my Dog!</button>
@@ -205,16 +210,16 @@
 
         </main>
 
-
-        <!-- FOOTER STARTS HERE -->
-        <footer>
-            <div>
-                <p>&#169; Tenal Bourchier 2020 (made at <a href="https://junocollege.com/">Juno College</a>)</p>
-                <p>Dog photography &#169; <a href="https://elkevogelsang.com/">Elke Vogelsang</a></p>
-            </div>
-        </footer>
-
     </div> <!-- wrapper ends here -->
+
+    <!-- FOOTER STARTS HERE -->
+    <footer>
+        <div class="wrapper">
+            <p>&#169; Tenal Bourchier 2020 (made at <a href="https://junocollege.com/">Juno College</a>)</p>
+            <p>Dog photography &#169; <a href="https://elkevogelsang.com/">Elke Vogelsang</a></p>
+        </div>
+    </footer>
+
 
     <script src='https://code.jquery.com/jquery-3.4.0.min.js' integrity='sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg=' crossorigin='anonymous'></script>
     
