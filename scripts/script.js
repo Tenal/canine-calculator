@@ -273,7 +273,7 @@ dogBreedApp.dogSize = {
             activityLevel: 'low',
             attentionLevel: 'high',
             trainingLevel: 'low',
-            image: './assets/grate-dane.jpg',
+            image: './assets/great-dane.jpg',
             alt: 'A great dane sitting down.',
             breed: 'Great Dane',
             temperament: ['Friendly', 'Loving', 'Patient'],
@@ -431,6 +431,7 @@ dogBreedApp.usersChoices = (size, activity, attention, training) => {
             $('#similar-breed-list').empty();
             $('.learn-more').empty();
             $('.different-traits-button').empty();
+            $('.results-title').css({ visibility: 'hidden' });
 
             // run the display and scroll functions
             dogBreedApp.displayBreedInfo(usersBreedName, usersBreedImage, usersBreedImageAlt, usersBreedTemperament, usersBreedLifeExpect, usersBreedGroup, usersSimilarBreeds, usersBreedMoreInfo);
@@ -444,6 +445,9 @@ dogBreedApp.usersChoices = (size, activity, attention, training) => {
 
 // (7) DISPLAY USER'S DOG BREED INFORMATION FUNCTION
 dogBreedApp.displayBreedInfo = (breedName, imageSource, imageAlt, temperament, lifeExpec, group, similarBreeds, moreInfo) => {
+    // display results titles
+    $('.results-title').css({visibility: 'visible'});
+
     // style & append breed photo to the results section
     const image = $('<img>').attr('width', '95%').attr('src', imageSource).attr('alt', imageAlt).css({ border: '1px solid black', padding: '20px' });
     $('.results-image').append(image);
@@ -493,6 +497,7 @@ dogBreedApp.chooseDifferentTraits = () => {
         $('#similar-breed-list').empty();
         $('.learn-more').empty();
         $('.different-traits-button').empty();
+        $('.results-title').css({ visibility: 'hidden' });
 
         // (b) scroll to the top of the page to allow user to choose new options
         dogBreedApp.scrollToTop();
