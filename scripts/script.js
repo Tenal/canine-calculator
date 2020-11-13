@@ -325,8 +325,21 @@ dogBreedApp.dogSize = {
 };
 
 
+// (3) CACHED SELECTORS
 
-// (3) RANDOMIZED BREED EVENT LISTENER FUNCTION (when the user clicks the 'random breed' button, display a random breed in the results section)
+
+// (4) NEXT QUESTION EVENT LISTENER FUNCTION (listens for when the user clicks the 'first question' and 'next question' links and brings the user to the following question)
+dogBreedApp.nextQuestionEventListener = function () {
+    // listen for when the user clicks the link
+    $('.scroll').on('click', function (event) {
+        event.preventDefault();
+        console.log($(this.hash));
+        $('html,body').animate({ scrollTop: $(this.hash).offset().top }, 500);
+    });
+};
+
+
+// (5) RANDOMIZED BREED EVENT LISTENER FUNCTION (when the user clicks the 'random breed' button, display a random breed in the results section)
 dogBreedApp.randomizedBreedEventListener = () => {
     $('.breed-randomizer').on('click', function () {
         // when the user clicks the button, run the function to generate random choices
@@ -335,8 +348,7 @@ dogBreedApp.randomizedBreedEventListener = () => {
 };
 
 
-
-// (4) RANDOMIZED BREED FUNCTION
+// (6) RANDOMIZED BREED FUNCTION
 dogBreedApp.randomizedBreed = () => {
 
     // function to return a random integer between a designated minimum and maximum number
@@ -366,8 +378,7 @@ dogBreedApp.randomizedBreed = () => {
 };
 
 
-
-// (5) FORM SUBMIT EVENT LISTENER FUNCTION 
+// (7) FORM SUBMIT EVENT LISTENER FUNCTION 
 dogBreedApp.formSubmitEventListener = () => {
     // listen for when the user submits the form
     $('form').on('submit', function (event) {
@@ -380,8 +391,7 @@ dogBreedApp.formSubmitEventListener = () => {
 };
 
 
-
-// (6) FORM SUBMIT ERROR HANDLING FUNCTION
+// (8) FORM SUBMIT ERROR HANDLING FUNCTION
 dogBreedApp.formSubmitErrorHandling = () => {
     
     const radioInputs = $('input:checked').length;
@@ -407,8 +417,7 @@ dogBreedApp.formSubmitErrorHandling = () => {
 };
 
 
-
-// (7) FUNCTION TO PICK DOG BREED BASED ON USER'S CHOICE (take the user's choices and filter through the dogSize object to find and return a match)
+// (9) FUNCTION TO PICK DOG BREED BASED ON USER'S CHOICE (take the user's choices and filter through the dogSize object to find and return a match)
 dogBreedApp.usersChoices = (size, activity, attention, training) => {
 
     // find the dog size array that matches the user's size choice
@@ -450,8 +459,7 @@ dogBreedApp.usersChoices = (size, activity, attention, training) => {
 };
 
 
-
-// (8) DISPLAY USER'S DOG BREED INFORMATION FUNCTION
+// (10) DISPLAY USER'S DOG BREED INFORMATION FUNCTION
 dogBreedApp.displayBreedInfo = (breedName, imageSource, imageAlt, temperament, lifeExpec, group, similarBreeds, moreInfo) => {
     // display hidden results titles
     $('.results-title').css({visibility: 'visible'});
@@ -479,9 +487,7 @@ dogBreedApp.displayBreedInfo = (breedName, imageSource, imageAlt, temperament, l
 };
 
 
-
-
-// (9) SCROLL TO RESULTS FUNCTION 
+// (11) SCROLL TO RESULTS FUNCTION 
 dogBreedApp.scrollToResults = () => {
     // automatically scroll the page down to the results displayed in the results section
     $('html').animate({
@@ -490,39 +496,7 @@ dogBreedApp.scrollToResults = () => {
 };
 
 
-
-
-
-
-
-// NEXT QUESTION EVENT LISTENER FUNCTION 
-dogBreedApp.nextQuestionEventListener = () => {
-    // listen for when the user submits the form
-    $('.next-question').on('click', function (event) {
-        // prevent default form behaviour (page refresh)
-        event.preventDefault();
-        console.log('form has been submitted!')
-        // run the form submit error handling function 
-        dogBreedApp.formSubmitErrorHandling();
-    });
-};
-
-
-// SCROLL TO NEXT QUESTION FUNCTION 
-dogBreedApp.scrollToNextQuestion = () => {
-    // automatically scroll the page down to the results displayed in the results section
-    $('html').animate({
-        scrollTop: $('#results').offset().top
-    }, 1000);
-};
-
-
-
-
-
-
-
-// (10) RESET FUNCTION
+// (12) RESET FUNCTION
 dogBreedApp.chooseDifferentTraits = () => {
     // append a 'choose different traits' button beneath displayed image and text
     const chooseDifferentTraits = $('<button>').text('Choose Different Traits').addClass('generator-button');
@@ -549,8 +523,7 @@ dogBreedApp.chooseDifferentTraits = () => {
 };
 
 
-
-// (11) SCROLL TO TOP OF PAGE FUNCTION
+// (13) SCROLL TO TOP OF PAGE FUNCTION
 dogBreedApp.scrollToTop = () => {
     $('html, body').animate({
         scrollTop: $('header').offset().top
@@ -558,14 +531,13 @@ dogBreedApp.scrollToTop = () => {
 };
 
 
-
 // (2) INIT FUNCTION
 dogBreedApp.init = () => {
     // upon app initialization, run the event listener functions
     dogBreedApp.randomizedBreedEventListener();
     dogBreedApp.formSubmitEventListener();
+    dogBreedApp.nextQuestionEventListener();
 };
-
 
 
 // (1) DOCUMENT READY FUNCTION
