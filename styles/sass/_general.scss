@@ -4,6 +4,8 @@ $background-secondary: #ffe3ca;
 $secondary-color: #5B124A; // OR #E6B54F // OR #FEFEFF
 $button: #ABC5D2;
 $button-hover: #7397AF;
+$option: #e9bd5f;
+$option-active: #DA972F;
 $button-clicked: #142541;
 $button-primary:#D87071;
 $button-active: #C95556;
@@ -33,7 +35,7 @@ html {
 }
 
 body {
-    background-color: $background-primary;
+    background-color: $button;
     font-family: $body-font;
 }
 

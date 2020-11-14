@@ -12,7 +12,7 @@
             // border: 1px solid red;
                 legend h2 {
                     font-size: 2.5rem;
-                    margin-bottom: 20px;
+                    margin-bottom: 30px;
                 }
                 .three-options-container {
                     display: flex;
@@ -27,6 +27,9 @@
         }
 }
 
+.odd-section {
+    background-color: $button-hover;
+}
 
 
 .option {
@@ -42,7 +45,7 @@
             font-size: 2rem;
             text-transform: uppercase;
             text-align: center;
-            background-color: $button;
+            background-color: $option;
             border: 1px solid $font-colour;
             width: 120px;
             padding: 15px 0;
@@ -50,18 +53,19 @@
             transition: 0.3s all;
             cursor: pointer;
                 &:hover {
-                    background-color: $button-hover;
+                    background-color: $option-active;
                     letter-spacing: 3px;
                 }
         }
         input[type=radio] {
             position: absolute;
             opacity: 0;
-                &:checked + label,
-                &:checked + label,
+                // &:checked + label,
+                // &:checked + label,
                 &:checked + label {
-                    background-color: $button-hover;
+                    background-color: $option-active;
                     letter-spacing: 3px;
+                    font-weight: 700;
                 }
         }
 }

@@ -252,7 +252,7 @@ html {
 }
 
 body {
-  background-color: #E3C4A8;
+  background-color: #ABC5D2;
   font-family: "Roboto", sans-serif;
 }
 
@@ -346,8 +346,13 @@ header div.text-container p {
 }
 
 .arrow {
-  margin-top: 10px;
+  margin-top: 40px;
   font-size: 6rem;
+  height: 55px;
+}
+
+.first-arrow {
+  margin-top: 60px;
 }
 
 .form-section {
@@ -372,7 +377,7 @@ header div.text-container p {
 
 .form-section fieldset legend h2 {
   font-size: 2.5rem;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 
 .form-section fieldset .three-options-container {
@@ -393,6 +398,10 @@ header div.text-container p {
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
   padding: 20px 0;
+}
+
+.odd-section {
+  background-color: #7397AF;
 }
 
 .option {
@@ -419,7 +428,7 @@ header div.text-container p {
   font-size: 2rem;
   text-transform: uppercase;
   text-align: center;
-  background-color: #ABC5D2;
+  background-color: #e9bd5f;
   border: 1px solid #000000;
   width: 120px;
   padding: 15px 0;
@@ -430,7 +439,7 @@ header div.text-container p {
 }
 
 .option label:hover {
-  background-color: #7397AF;
+  background-color: #DA972F;
   letter-spacing: 3px;
 }
 
@@ -439,11 +448,10 @@ header div.text-container p {
   opacity: 0;
 }
 
-.option input[type=radio]:checked + label,
-.option input[type=radio]:checked + label,
 .option input[type=radio]:checked + label {
-  background-color: #7397AF;
+  background-color: #DA972F;
   letter-spacing: 3px;
+  font-weight: 700;
 }
 
 .three-options-container .option {
@@ -488,6 +496,7 @@ header div.text-container p {
 }
 
 .results-text {
+  border: 1px solid red;
   text-align: center;
   display: -webkit-box;
   display: -ms-flexbox;
