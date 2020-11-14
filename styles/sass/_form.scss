@@ -1,4 +1,11 @@
-form {
+
+.form-section {
+    // border: 2px solid green;
+    min-height: 100vh;
+    padding: 30px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     text-align: center;
         fieldset {
             border: none;
@@ -20,14 +27,6 @@ form {
         }
 }
 
-.form-section {
-    // border: 2px solid green;
-    height: 100vh;
-    padding: 30px 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
 
 
 .option {
@@ -36,7 +35,6 @@ form {
     align-items: center;
     position: relative;
         .image-div {
-            width: 300px;
             border-radius: 50%;
             box-shadow: 0 0 10px $font-colour;
         }
@@ -68,3 +66,18 @@ form {
         }
 }
 
+.three-options-container {
+    .option {
+        width: calc(100% / 3 - 40px);
+    }
+    .option-3-center {
+        margin: 0 40px;
+    }
+}
+
+.two-options-container {
+    .option {
+        width: calc(100% / 2 - 50px);
+        margin: 0 50px;
+    }
+}
