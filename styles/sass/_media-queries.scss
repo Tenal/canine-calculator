@@ -1,9 +1,16 @@
-/* ------------------- MEDIA QUERIES ------------------- */
 /* MAJOR BREAKPOINT 1: small desktop & portrait tablet */
 @media (max-width: 940px) {
     // HEADER
     header h1 {
         font-size: 7.4rem;
+    }
+
+    // MAIN - DYNAMIC RESULTS
+    .results-image-and-text {
+        .results-image,
+        .results-text {
+            width: 50%;
+        }
     }
 
     // FOOTER
@@ -45,8 +52,24 @@
         }
     }
 
-    .form-section fieldset{
-        margin: 0 auto;
+    // MAIN - DYNAMIC RESULTS
+    .results-image-and-text {
+        flex-direction: column;
+        align-items: center;
+            .results-image,
+            .results-text {
+                width: 90%;
+            }
+            .results-text {
+                margin-top: 30px;
+                padding: 0;
+                min-height: 400px;
+            }
+    }
+
+    .dynamic-heading {
+        font-size: 3.5rem;
+        width: 350px;
     }
 
     // FOOTER
@@ -95,6 +118,27 @@
                     font-size: 1.5rem;
                 }
         }
+    }
+
+    // MAIN - DYNAMIC RESULTS
+    .results-image-and-text {
+            .results-image,
+            .results-text {
+                width: 100%;
+            }
+            .results-text {
+                margin-top: 30px;
+                padding: 0;
+                min-height: 400px;
+                    .results-title {
+                        letter-spacing: 0.4rem;
+                    }
+            }
+    }
+
+    .dynamic-heading {
+        font-size: 2.5rem;
+        width: 300px;
     }
 
     // FOOTER

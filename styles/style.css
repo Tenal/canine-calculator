@@ -323,7 +323,7 @@ header div.text-container p {
   background-color: #D87071;
   border: 1px solid #000000;
   padding: 10px 20px;
-  margin-top: 17px;
+  margin: 15px 0 10px 0;
   -webkit-transition: 0.3s all;
   transition: 0.3s all;
   cursor: pointer;
@@ -398,6 +398,10 @@ header div.text-container p {
           justify-content: space-evenly;
 }
 
+.form-section button.generator-button {
+  margin-top: 50px;
+}
+
 .odd-section {
   background-color: #7397AF;
 }
@@ -469,7 +473,8 @@ header div.text-container p {
   margin: 0 40px;
 }
 
-.results-container {
+.results-container-main,
+.results-container-secondary {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -477,6 +482,9 @@ header div.text-container p {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -493,12 +501,11 @@ header div.text-container p {
 
 .results-image-and-text .results-image,
 .results-image-and-text .results-text {
-  width: calc(100% / 2 - 100px);
-  margin: 0 25px;
+  width: 40%;
 }
 
-.results-text {
-  border: 1px solid red;
+.results-image-and-text .results-text {
+  padding: 0 20px;
   text-align: center;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -512,22 +519,23 @@ header div.text-container p {
           justify-content: space-between;
 }
 
-.results-text .results-title {
+.results-image-and-text .results-text .results-title {
   border: 1px solid #000000;
-  -webkit-box-shadow: 0 2px 2px #7397AF;
-          box-shadow: 0 2px 2px #7397AF;
+  -webkit-box-shadow: 0 0 5px #000000;
+          box-shadow: 0 0 5px #000000;
   background-color: #ABC5D2;
   text-transform: uppercase;
-  font-size: 2.3rem;
-  line-height: 3.3rem;
+  font-size: 2rem;
+  line-height: 3rem;
   letter-spacing: 0.6rem;
   visibility: hidden;
-  margin-bottom: 10px;
+  margin-bottom: 7px;
 }
 
 .dynamic-heading {
-  font-size: 4rem;
-  margin-bottom: 20px;
+  font-size: 3.5rem;
+  margin: 10px 0 15px 0;
+  text-align: center;
 }
 
 .dynamic-breed {
@@ -539,8 +547,13 @@ header div.text-container p {
   line-height: 2.6rem;
 }
 
+.dynamic-image {
+  -webkit-box-shadow: 0 0 5px #000000;
+          box-shadow: 0 0 5px #000000;
+}
+
 footer {
-  background-color: #D87071;
+  background-color: #DA972F;
   margin-top: 60px;
   padding: 10px 0;
 }
@@ -563,11 +576,14 @@ footer div a {
   font-style: italic;
 }
 
-/* ------------------- MEDIA QUERIES ------------------- */
 /* MAJOR BREAKPOINT 1: small desktop & portrait tablet */
 @media (max-width: 940px) {
   header h1 {
     font-size: 7.4rem;
+  }
+  .results-image-and-text .results-image,
+  .results-image-and-text .results-text {
+    width: 50%;
   }
   footer div p {
     font-size: 1.5rem;
@@ -609,8 +625,27 @@ footer div a {
   .form-section fieldset .arrow {
     margin: 0 0 20px 0;
   }
-  .form-section fieldset {
-    margin: 0 auto;
+  .results-image-and-text {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .results-image-and-text .results-image,
+  .results-image-and-text .results-text {
+    width: 90%;
+  }
+  .results-image-and-text .results-text {
+    margin-top: 30px;
+    padding: 0;
+    min-height: 400px;
+  }
+  .dynamic-heading {
+    font-size: 3.5rem;
+    width: 350px;
   }
   footer div {
     -webkit-box-orient: vertical;
@@ -660,6 +695,22 @@ footer div a {
     margin-top: 20px;
     width: 160px;
     font-size: 1.5rem;
+  }
+  .results-image-and-text .results-image,
+  .results-image-and-text .results-text {
+    width: 100%;
+  }
+  .results-image-and-text .results-text {
+    margin-top: 30px;
+    padding: 0;
+    min-height: 400px;
+  }
+  .results-image-and-text .results-text .results-title {
+    letter-spacing: 0.4rem;
+  }
+  .dynamic-heading {
+    font-size: 2.5rem;
+    width: 300px;
   }
   footer div p:first-child {
     width: 160px;

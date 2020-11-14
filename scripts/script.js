@@ -280,7 +280,7 @@ dogBreedApp.dogSize = {
             lifeExpectancy: '7-10 years',
             group: 'Working Group',
             similarBreeds: ['Neapolitan Mastiff', 'Saint Bernard'],
-            learnMore: '<a href="https://www.akc.org/dog-breeds/great-dane/">Learn More</a>'
+            breedLink: '<a href="https://www.akc.org/dog-breeds/great-dane/">Great Dane</a>'
         },
         {
             activityLevel: 'low',
@@ -329,10 +329,9 @@ dogBreedApp.dogSize = {
 const $breed = $('#results-heading');
 const $image = $('#results-image');
 const $temperament = $('#temperament-list');
-const $lifeExpec = $('#life-expec p');
-const $group = $('#group p');
+const $lifeExpec = $('#life-expec');
+const $group = $('#group');
 const $similarBreeds = $('#similar-breed-list');
-const $learnMore = $('#learn-more');
 const $differentTraitsButton = $('#different-traits-button');
 const $titles = $('.results-title');
 
@@ -430,14 +429,13 @@ dogBreedApp.generatedBreed = (size, activity, attention, training) => {
         if (activity === dogSizeOption.activityLevel && attention === dogSizeOption.attentionLevel && training === dogSizeOption.trainingLevel) {
 
             // store the breed's information in variables
-            const usersBreedName = dogSizeOption.breed;
             const usersBreedImage = dogSizeOption.image;
             const usersBreedImageAlt = dogSizeOption.alt;
             const usersBreedTemperament = dogSizeOption.temperament;
             const usersBreedLifeExpect = dogSizeOption.lifeExpectancy;
             const usersBreedGroup = dogSizeOption.group;
             const usersSimilarBreeds = dogSizeOption.similarBreeds;
-            const usersBreedMoreInfo = dogSizeOption.learnMore;
+            const usersBreedLink = dogSizeOption.breedLink;
 
             // remove appended content if user makes new choices when submitting the form again
             $breed.empty();
@@ -445,13 +443,14 @@ dogBreedApp.generatedBreed = (size, activity, attention, training) => {
             $temperament.empty();
             $lifeExpec.empty();
             $group.empty();
+            $lifeExpec.empty();
+            $group.empty();
             $similarBreeds.empty();
-            $learnMore.empty();
             $differentTraitsButton.empty();
             $titles.css({ visibility: 'hidden' });
 
             // run the functions to display the breed information & automatically bring the user to the displayed results
-            dogBreedApp.displayBreedInfo(usersBreedName, usersBreedImage, usersBreedImageAlt, usersBreedTemperament, usersBreedLifeExpect, usersBreedGroup, usersSimilarBreeds, usersBreedMoreInfo);
+            dogBreedApp.displayBreedInfo(usersBreedImage, usersBreedImageAlt, usersBreedTemperament, usersBreedLifeExpect, usersBreedGroup, usersSimilarBreeds, usersBreedLink);
             dogBreedApp.chooseDifferentTraits();
             dogBreedApp.scrollToResults();
         };
@@ -460,16 +459,16 @@ dogBreedApp.generatedBreed = (size, activity, attention, training) => {
 
 
 // (10) DISPLAY DOG BREED INFORMATION (a function that takes the stored breed information and displays the associated image and text in the results section)
-dogBreedApp.displayBreedInfo = (breedName, imageSource, imageAlt, temperament, lifeExpec, group, similarBreeds, moreInfo) => {
+dogBreedApp.displayBreedInfo = (imageSource, imageAlt, temperament, lifeExpec, group, similarBreeds, breedLink) => {
     // display hidden results titles
     $titles.css({visibility: 'visible'});
 
     // style & append breed photo to the results section
-    const breedImage = $('<img>').attr('width', '95%').attr('src', imageSource).attr('alt', imageAlt).css({ border: '1px solid black', padding: '20px' });
+    const breedImage = $('<img>').attr('src', imageSource).attr('alt', imageAlt).css({ border: '1px solid black', padding: '10px'}).addClass('dynamic-image');
     $image.append(breedImage);
 
     // style & append breed name and information to the results section
-    $breed.append(`<h2 class="dynamic-heading">Your perfect breed is: <span class="dynamic-breed">${breedName}</span>!</h2>`);
+    $breed.append(`<h2 class="dynamic-heading">Your perfect breed is: <span class="dynamic-breed">${breedLink}</span>!</h2>`);
 
     temperament.forEach((trait) => {
         $temperament.append(`<li class="dynamic-text">${trait}</li>`)
@@ -482,8 +481,6 @@ dogBreedApp.displayBreedInfo = (breedName, imageSource, imageAlt, temperament, l
     similarBreeds.forEach((breed) => {
         $similarBreeds.append(`<li class="dynamic-text">${breed}</li>`)
     });
-
-    $learnMore.append(moreInfo);
 };
 
 
@@ -511,7 +508,6 @@ dogBreedApp.chooseDifferentTraits = () => {
         $lifeExpec.empty();
         $group.empty();
         $similarBreeds.empty();
-        $learnMore.empty();
         $differentTraitsButton.empty();
         $titles.css({ visibility: 'hidden' });
 

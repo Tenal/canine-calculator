@@ -1,44 +1,48 @@
-.results-container {
+// #results{
+//     border: 2px solid green;
+// }
+
+.results-container-main,
+.results-container-secondary {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     align-items: center;
 }
-
 
 .results-image-and-text {
     display: flex;
     justify-content: center;
         .results-image,
         .results-text {
-            width: calc(100% / 2 - 100px);
-            margin: 0 25px;
+            width: 40%;
+        }
+        .results-text {
+            // border: 1px solid red;
+            padding: 0 20px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+                .results-title {
+                    border: 1px solid $font-colour;
+                    box-shadow: 0 0 5px $font-colour;
+                    background-color: $button;
+                    text-transform: uppercase;
+                    font-size: 2rem;
+                    line-height: 3rem;
+                    letter-spacing: 0.6rem;
+                    visibility: hidden;
+                    margin-bottom: 7px;
+                }
         }
 }
 
-
-.results-text {
-    border: 1px solid red;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-        .results-title {
-            border: 1px solid $font-colour;
-            box-shadow: 0 2px 2px $button-hover;
-            background-color: $button;
-            text-transform: uppercase;
-            font-size: 2.3rem;
-            line-height: 3.3rem;
-            letter-spacing: 0.6rem;
-            visibility: hidden;
-            margin-bottom: 10px;
-        }
-}
-
-
+// classes for appended breed text (applied in JS)
 .dynamic-heading {
-    font-size: 4rem;
-    margin-bottom: 20px;
+    font-size: 3.5rem;
+    margin: 10px 0 15px 0;
+    text-align: center;
 }
 
 .dynamic-breed {
@@ -49,6 +53,10 @@
 .dynamic-text {
     font-size: 2.0rem;
     line-height: 2.6rem;
+}
+
+.dynamic-image {
+    box-shadow: 0 0 5px $font-colour;
 }
 
 // .dynamic-links {
