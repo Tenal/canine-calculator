@@ -1,7 +1,4 @@
-// #results{
-//     border: 2px solid green;
-// }
-
+// DYNAMIC RESULTS STYLING ----------
 .results-container-main,
 .results-container-secondary {
     display: flex;
@@ -18,7 +15,6 @@
             width: 40%;
         }
         .results-text {
-            // border: 1px solid red;
             padding: 0 20px;
             text-align: center;
             display: flex;
@@ -27,7 +23,7 @@
                 .results-title {
                     border: 1px solid $font-colour;
                     box-shadow: 0 0 5px $font-colour;
-                    background-color: $button;
+                    background-color: $secondary-colour;
                     text-transform: uppercase;
                     font-size: 2rem;
                     line-height: 3rem;
@@ -38,17 +34,16 @@
         }
 }
 
-// classes for appended breed text (applied in JS)
+// CLASSES FOR MINOR STYLING OG APPENDED BREED TEXT (APPLIED IN JS) ---------- 
 .dynamic-heading {
     font-size: 3.5rem;
-    margin: 10px 0 15px 0;
+    margin: 20px 0 15px 0;
     text-align: center;
 }
 
 .dynamic-breed {
-    color: $button-active;
+    color: $option-active;
 }
-
 
 .dynamic-text {
     font-size: 2.0rem;
@@ -57,8 +52,9 @@
 
 .dynamic-image {
     box-shadow: 0 0 5px $font-colour;
+    background-color: $secondary-colour;
 }
 
 // .dynamic-links {
-//     // styling here for similar breeds &/or learn more links
+//     // styling here for similar breeds
 // }

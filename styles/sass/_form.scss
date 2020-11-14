@@ -1,6 +1,5 @@
-
+// GENERAL FORM STYLING ----------
 .form-section {
-    // border: 2px solid green;
     min-height: 100vh;
     padding: 15px 0;
     display: flex;
@@ -9,7 +8,6 @@
     text-align: center;
         fieldset {
             border: none;
-            // border: 1px solid red;
                 legend h2 {
                     font-size: 2.5rem;
                     margin-bottom: 30px;
@@ -29,9 +27,10 @@
 }
 
 .odd-section {
-    background-color: $button-hover;
+    background-color: $secondary-colour;
 }
 
+// OPTION (TRAIT CHOICE) STYLING WITHIN FIELDSETS ----------
 .option {
     display: flex;
     flex-direction: column;
@@ -52,7 +51,9 @@
             margin-top: 40px;
             transition: 0.3s all;
             cursor: pointer;
-                &:hover {
+                &:hover,
+                &:active,
+                &:focus {
                     background-color: $option-active;
                     letter-spacing: 3px;
                 }
@@ -60,8 +61,6 @@
         input[type=radio] {
             position: absolute;
             opacity: 0;
-                // &:checked + label,
-                // &:checked + label,
                 &:checked + label {
                     background-color: $option-active;
                     letter-spacing: 3px;

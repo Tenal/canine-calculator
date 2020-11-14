@@ -19,9 +19,8 @@ header {
             min-height: auto;
             border: 1px solid $font-colour;
             box-shadow: 0 0 10px $font-colour;
-            border-radius: 25px;
             padding: 0 10px 20px 10px;
-            margin-top: 15vh;
+            margin-top: 10vh;
             text-align: center;
                 p {
                     margin-top: 17px;
@@ -34,32 +33,39 @@ header {
 .generator-button {
     font-size: 2rem;
     text-align: center;
-    background-color: $button-primary;
+    background-color: $secondary-colour;
     border: 1px solid $font-colour;
     padding: 10px 20px;
     margin: 15px 0 10px 0;
     transition: 0.3s all;
     cursor: pointer;
         &:hover {
-            background-color: $button-active;
+            background-color: $primary-colour;
         }
 }
 
 // 'NEXT QUESTION' LINK STYLING ----------
+// 'answer questions' link
 .start {
-    font-size: 2rem;
+    font-size: 1.7rem;
+    text-transform: uppercase;
     text-align: center;
-    background-color: $button;
+    background-color: $option;
     border: 1px solid $font-colour;
     margin-top: 17px;
-    padding: 10px 20px;
+    padding: 10px 0;
+    width: 260px;
     transition: 0.3s all;
     cursor: pointer;
-        &:hover {
-            background-color: $button-hover;
+        &:hover,
+        &:focus,
+        &:active {
+            background-color: $option-active;
+            letter-spacing: 3px;
         }
 }
 
+// 'downwards arrow' link
 .arrow {
     margin-top: 40px;
     font-size: 6rem;
