@@ -291,7 +291,7 @@ header {
 header h1 {
   font-size: 8rem;
   text-align: center;
-  margin-bottom: 80px;
+  margin-bottom: 40px;
   font-family: "Domine", serif;
 }
 
@@ -351,13 +351,9 @@ header div.text-container p {
   height: 55px;
 }
 
-.first-arrow {
-  margin-top: 60px;
-}
-
 .form-section {
   min-height: 100vh;
-  padding: 30px 0;
+  padding: 15px 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -387,7 +383,6 @@ header div.text-container p {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  padding: 20px 0;
 }
 
 .form-section fieldset .two-options-container {
@@ -397,7 +392,6 @@ header div.text-container p {
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
-  padding: 20px 0;
 }
 
 .odd-section {
@@ -430,7 +424,7 @@ header div.text-container p {
   text-align: center;
   background-color: #e9bd5f;
   border: 1px solid #000000;
-  width: 120px;
+  width: 200px;
   padding: 15px 0;
   margin-top: 40px;
   -webkit-transition: 0.3s all;
@@ -458,13 +452,17 @@ header div.text-container p {
   width: calc(100% / 3 - 40px);
 }
 
+.three-options-container .option label {
+  width: 170px;
+}
+
 .three-options-container .option-3-center {
   margin: 0 40px;
 }
 
 .two-options-container .option {
-  width: calc(100% / 2 - 50px);
-  margin: 0 50px;
+  width: calc(100% / 3 - 40px);
+  margin: 0 40px;
 }
 
 .results-container {

@@ -14,9 +14,6 @@
 
 <body>
 
-    <!-- <h1><i class="fa fa-heart animated pulse infinite"></i> Queen Street Hot Treat! <i
-            class="fa fa-heart animated pulse infinite"></i></h1> -->
-
     <!-- HEADER STARTS HERE -->
     <header>
         <div class="wrapper">
@@ -27,14 +24,13 @@
                 <p>To get started, click on the button below:</p>
                 <a class="scroll start" href="#first-question">Answer Questions</a>
                 <p>If you'd prefer to forgo the questions and just want us to show you a breed to start your search, click below:</p>
-                <button class="breed-randomizer generator-button">Get me a Random Breed</button>
+                <button class="generator-button" id="random-breed">Get me a Random Breed</button>
             </div>
         </div>
     </header>
 
-    
+        <!-- MAIN STARTS HERE -->
         <main>
-
             <!-- FORM STARTS HERE -->
             <form action="">
                 <!-- FIRST QUESTION STARTS HERE -->
@@ -71,11 +67,11 @@
                                     <p class="sr-only">Click here if you want a large dog breed.</p>
                                 </div>
                             </div>
+                            <a class="scroll arrow" href="#second-question">
+                                <i class="fas fa-chevron-down animate__animated animate__pulse animate__infinite"></i>
+                                <span class="sr-only">a chevron symbol pointing down. click here to go to the next question.</span>
+                            </a>
                         </fieldset>
-                        <a class="scroll arrow first-arrow" href="#second-question">
-                            <i class="fas fa-chevron-down animate__animated animate__pulse animate__infinite"></i>
-                            <span class="sr-only">a chevron symbol pointing down. click here to go to the next question.</span>
-                        </a>
                     </div>
                 </section>
 
@@ -84,7 +80,7 @@
                     <div class="wrapper">
                         <fieldset>
                             <legend>
-                                <h2>How energetic do you want your puppy pal to be?</h2>
+                                <h2>How energetic should your puppy pal be?</h2>
                             </legend>
                             <div class="two-options-container">
                                 <div class="option">
@@ -92,7 +88,7 @@
                                         <img src="./assets/low-activity-photo.png" alt="cartoon image of a woman on a couch reading a book with a dog sleeping on a pillow next to her">
                                     </div>
                                     <input type="radio" name="activity" id="low-activity" value="low">
-                                    <label for="low-activity">Low</label>
+                                    <label for="low-activity">Calm</label>
                                     <p class="sr-only">Click here if you want a calm dog breed requiring around one hour of exercise daily.</p>
                                 </div>
                                 <div class="option">
@@ -100,15 +96,15 @@
                                         <img src="./assets/high-activity-photo.png" alt="cartoon image of a woman running with a husky">
                                     </div>
                                     <input type="radio" name="activity" id="high-activity" value="high">
-                                    <label for="high-activity">High</label>
+                                    <label for="high-activity">Energetic</label>
                                     <p class="sr-only">Click here if you want an energetic dog breed requiring over two hours of exercise daily.</p>
                                 </div>
                             </div>
+                            <a class="scroll arrow" href="#third-question">
+                                <i class="fas fa-chevron-down animate__animated animate__pulse animate__infinite"></i>
+                                <span class="sr-only">a chevron symbol pointing down. click here to go to the next question.</span>
+                            </a>
                         </fieldset>
-                        <a class="scroll arrow" href="#third-question">
-                            <i class="fas fa-chevron-down animate__animated animate__pulse animate__infinite"></i>
-                            <span class="sr-only">a chevron symbol pointing down. click here to go to the next question.</span>
-                        </a>
                     </div>
                 </section>
 
@@ -117,7 +113,7 @@
                     <div class="wrapper">
                         <fieldset>
                             <legend>
-                                <h2>How affectionate do you want your canine companion to be?</h2>
+                                <h2>How affectionate do you want your canine companion?</h2>
                             </legend>
                             <div class="two-options-container">
                                 <div class="option">
@@ -125,7 +121,7 @@
                                         <img src="./assets/low-attention-photo.png" alt="cartoon image of a dog sitting alone looking out a window">
                                     </div>
                                     <input type="radio" name="attention" id="low-attention" value="low">
-                                    <label for="low-attention">Low</label>
+                                    <label for="low-attention">Independent</label>
                                     <p class="sr-only">Click here if you want an independent dog breed more suitable for owners who will be out of the house over forty hours a week.</p>
                                 </div>
                                 <div class="option">
@@ -133,15 +129,15 @@
                                         <img src="./assets/high-attention-photo.png" alt="cartoon image of a dog lying next to a woman on a matt">
                                     </div>
                                     <input type="radio" name="attention" id="high-attention" value="high">
-                                    <label for="high-attention">High</label>
+                                    <label for="high-attention">Affectionate</label>
                                     <p class="sr-only">Click here if you want an attentive dog breed more suitable for owners who will be out of the house under forty hours a week.</p>
                                 </div>
                             </div>
+                            <a class="scroll arrow" href="#fourth-question">
+                                <i class="fas fa-chevron-down animate__animated animate__pulse animate__infinite"></i>
+                                <span class="sr-only">a chevron symbol pointing down. click here to go to the next question.</span>
+                            </a>
                         </fieldset>
-                        <a class="scroll arrow" href="#fourth-question">
-                            <i class="fas fa-chevron-down animate__animated animate__pulse animate__infinite"></i>
-                            <span class="sr-only">a chevron symbol pointing down. click here to go to the next question.</span>
-                        </a>
                     </div>
                 </section>
 
@@ -150,7 +146,7 @@
                     <div class="wrapper">
                         <fieldset>
                             <legend>
-                                <h2>How trainable would you like your dapper dog to be?</h2>
+                                <h2>How much time are you going to spend training your dapper dog?</h2>
                             </legend>
                             <div class="two-options-container">
                                 <div class="option">
@@ -158,7 +154,7 @@
                                         <img src="./assets/low-training-photo.png" alt="cartoon image of a woman and dog lounging together">
                                     </div>
                                     <input type="radio" name="training" id="low-trainability" value="low">
-                                    <label for="low-trainability">Low</label>
+                                    <label for="low-trainability">A little</label>
                                     <p class="sr-only">Click here if you're relaxed about rules and only plan on teaching your dog the basics.</p>
                                 </div>
                                 <div class="option">
@@ -166,7 +162,7 @@
                                         <img src="./assets/high-training-photo.png" alt="cartoon image of a man asking a dog to sit down">
                                     </div>
                                     <input type="radio" name="training" id="high-trainability" value="high">
-                                    <label for="high-trainability">High</label>
+                                    <label for="high-trainability">A lot</label>
                                     <p class="sr-only">Click here if general obedience is important to you and you plan on teaching your dog as many cool tricks as possible.</p>
                                 </div>
                             </div>
@@ -185,13 +181,13 @@
             <!-- DYNAMIC CONTENT STARTS HERE -->
             <section class="results" id="results">
                 <div class="wrapper results-container">
-                    <div class="results-heading">
+                    <div class="results-heading" id="results-heading">
                         <!-- dynamically appended heading (breed name) -->
                     </div>
 
                     <div class="results-container">
                         <div class="results-image-and-text">
-                            <div class="results-image">
+                            <div class="results-image" id="results-image">
                                 <!-- dynamically appended image (breed image) -->
                             </div>
                             <div class="results-text">
@@ -201,11 +197,11 @@
                                         <!-- dynamically appended text (breed temperament) -->
                                     </ul>
                                 </div>
-                                <div class="life-expec">
+                                <div class="life-expec" id="life-expec">
                                     <h3 class="results-title">Life Expectancy</h3>
                                     <!-- dynamically appended text (breed life expectancy) -->
                                 </div>
-                                <div class="group">
+                                <div class="group" id="group">
                                     <h3 class="results-title">Breed Group</h3>
                                     <!-- dynamically appended text (breed group) -->
                                 </div>
@@ -215,14 +211,14 @@
                                         <!-- dynamically appended text (similar breed) -->
                                     </ul>
                                 </div>
-                                <div class="learn-more">
+                                <div class="learn-more" id="learn-more">
                                     <!-- dynamically appended text (learn more button) -->
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="different-traits-button">
+                    <div class="different-traits-button" id="different-traits-button">
                         <!-- dynamically appended reset button -->
                     </div>
                 </div>

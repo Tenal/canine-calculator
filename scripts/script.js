@@ -325,38 +325,47 @@ dogBreedApp.dogSize = {
 };
 
 
-// (3) CACHED SELECTORS
+// (3) CACHED SELECTORS (caching selectors that will be used 2+ times)
+const $breed = $('#results-heading');
+const $image = $('#results-image');
+const $temperament = $('#temperament-list');
+const $lifeExpec = $('#life-expec p');
+const $group = $('#group p');
+const $similarBreeds = $('#similar-breed-list');
+const $learnMore = $('#learn-more');
+const $differentTraitsButton = $('#different-traits-button');
+const $titles = $('.results-title');
 
 
-// (4) NEXT QUESTION EVENT LISTENER FUNCTION (listens for when the user clicks the 'first question' and 'next question' links and brings the user to the following question)
+// (4) NEXT QUESTION EVENT LISTENER (a function that brings the user to the following question when the user clicks the 'first question' or 'next question' links)
 dogBreedApp.nextQuestionEventListener = function () {
     // listen for when the user clicks the link
     $('.scroll').on('click', function (event) {
         event.preventDefault();
-        console.log($(this.hash));
+        // bring the user to the following question
         $('html,body').animate({ scrollTop: $(this.hash).offset().top }, 500);
     });
 };
 
 
-// (5) RANDOMIZED BREED EVENT LISTENER FUNCTION (when the user clicks the 'random breed' button, display a random breed in the results section)
-dogBreedApp.randomizedBreedEventListener = () => {
-    $('.breed-randomizer').on('click', function () {
-        // when the user clicks the button, run the function to generate random choices
-        dogBreedApp.randomizedBreed();
+// (5) RANDOM BREED EVENT LISTENER (a function that runs the function that generates random trait choices when the user clicks the 'random breed' button)
+dogBreedApp.randomBreedEventListener = () => {
+    // listen for when the user clicks the button
+    $('#random-breed').on('click', function () {
+        // run the function to generate random trait choices
+        dogBreedApp.randomTraitChoices();
     });
 };
 
 
-// (6) RANDOMIZED BREED FUNCTION
-dogBreedApp.randomizedBreed = () => {
-
-    // function to return a random integer between a designated minimum and maximum number
+// (6) CHOOSE RANDOM TRAIT CHOICES (a function that uses a random integer generator function to choose random trait choices for size, activity, attention, and training, then runs the function that will choose a breed based on the traits)
+dogBreedApp.randomTraitChoices = () => {
+    // a function that will return a random integer between a designated minimum and maximum number
     function randomInteger(min, max) {
         return Math.floor(Math.random() * (max - min + 1)) + min;
     }
     
-    // choose a random dog size array by a) choosing a random number between 0 and 2 (0, 1 or 2), then b) defining the 'size' variable based on the random number
+    // choose a random dog size by a) choosing a random integer between 0 and 2 (0, 1 or 2), then b) defining the 'size' variable based on that random integer
     let size = randomInteger(0, 2);
     randomSizeChoice = (size === 0) ? "small" : (size === 1) ? "medium" : "large";
     
@@ -374,62 +383,53 @@ dogBreedApp.randomizedBreed = () => {
 
 
     // run the function to find the dog breed object that corresponds to the random choices
-    dogBreedApp.usersChoices(randomSizeChoice, randomActivityChoice, randomAttentionChoice, randomTrainingChoice);
+    dogBreedApp.generatedBreed(randomSizeChoice, randomActivityChoice, randomAttentionChoice, randomTrainingChoice);
 };
 
 
-// (7) FORM SUBMIT EVENT LISTENER FUNCTION 
+// (7) FORM SUBMIT EVENT LISTENER (a function that runs the function that stores the user's trait choices when the user submits the form)
 dogBreedApp.formSubmitEventListener = () => {
     // listen for when the user submits the form
     $('form').on('submit', function (event) {
         // prevent default form behaviour (page refresh)
         event.preventDefault();
-        console.log('form has been submitted!')
-        // run the form submit error handling function 
-        dogBreedApp.formSubmitErrorHandling();
+        // run the function that error handles & stores the user's choices
+        dogBreedApp.usersTraitChoices();
     });
 };
 
 
-// (8) FORM SUBMIT ERROR HANDLING FUNCTION
-dogBreedApp.formSubmitErrorHandling = () => {
-    
+// (8) USERS TRAIT CHOICES (a function that alerts the user if they have made under 4 selections. else, it stores their selections and runs the function that chooses a breed based on the traits)
+dogBreedApp.usersTraitChoices = () => {
     const radioInputs = $('input:checked').length;
 
-    // IF all form fields have not been filled out, then alert the user. ELSE, store the users selections and run the usersChoices function
+    // IF all form fields have not been filled out, then alert the user
     if (radioInputs < 4) {
-
-        //NOTE: change this to appended box vs alert
-        alert(`Oh no! Looks like you haven't answered all of the questions, furriend! Please complete all of the questions to find your ideal dog breed!`);
-
+        alert(`Oh no! Looks like you haven't answered all of the questions, furriend! Please complete all of the questions to find your perfect dog breed!`);
     } else {
-
-        //store the users selections in variables
+        //ELSE store the users selections in variables
         const usersSizeChoice = $('input[name=size]:checked').val();
         const usersActivityChoice = $('input[name=activity]:checked').val();
         const usersAttentionChoice = $('input[name=attention]:checked').val();
         const usersTrainingChoice = $('input[name=training]:checked').val();
-        console.log('SIZE: ', usersSizeChoice);
 
         // run the function to find the dog breed object that corresponds to the users choices
-        dogBreedApp.usersChoices(usersSizeChoice, usersActivityChoice, usersAttentionChoice, usersTrainingChoice);
+        dogBreedApp.generatedBreed(usersSizeChoice, usersActivityChoice, usersAttentionChoice, usersTrainingChoice);
     }
 };
 
 
-// (9) FUNCTION TO PICK DOG BREED BASED ON USER'S CHOICE (take the user's choices and filter through the dogSize object to find and return a match)
-dogBreedApp.usersChoices = (size, activity, attention, training) => {
-
+// (9) GENERATE A BREED (a function that takes the trait choices passed in as arguments and filters through the dog object to find a matching breed)
+dogBreedApp.generatedBreed = (size, activity, attention, training) => {
     // find the dog size array that matches the user's size choice
     const dogSizeOptions = dogBreedApp.dogSize[size];
-    console.log('DOG SIZE ARRAY: ', dogSizeOptions);
 
+    // filter through that dog size array and find the dog breed with activity, attention, and training traits that match the trait choices passed in
     dogSizeOptions.filter((dogSizeOption) => {
         
-        // filter through that dog size array and find the dog breed object with activity, attention, and training levels that match the user's choices
         if (activity === dogSizeOption.activityLevel && attention === dogSizeOption.attentionLevel && training === dogSizeOption.trainingLevel) {
 
-            // store the breed object's information in variables
+            // store the breed's information in variables
             const usersBreedName = dogSizeOption.breed;
             const usersBreedImage = dogSizeOption.image;
             const usersBreedImageAlt = dogSizeOption.alt;
@@ -440,17 +440,17 @@ dogBreedApp.usersChoices = (size, activity, attention, training) => {
             const usersBreedMoreInfo = dogSizeOption.learnMore;
 
             // remove appended content if user makes new choices when submitting the form again
-            $('.results-heading').empty();
-            $('.results-image').empty();
-            $('#temperament-list').empty();
-            $('.life-expec p').empty();
-            $('.group p').empty();
-            $('#similar-breed-list').empty();
-            $('.learn-more').empty();
-            $('.different-traits-button').empty();
-            $('.results-title').css({ visibility: 'hidden' });
+            $breed.empty();
+            $image.empty();
+            $temperament.empty();
+            $lifeExpec.empty();
+            $group.empty();
+            $similarBreeds.empty();
+            $learnMore.empty();
+            $differentTraitsButton.empty();
+            $titles.css({ visibility: 'hidden' });
 
-            // run the display and scroll functions
+            // run the functions to display the breed information & automatically bring the user to the displayed results
             dogBreedApp.displayBreedInfo(usersBreedName, usersBreedImage, usersBreedImageAlt, usersBreedTemperament, usersBreedLifeExpect, usersBreedGroup, usersSimilarBreeds, usersBreedMoreInfo);
             dogBreedApp.chooseDifferentTraits();
             dogBreedApp.scrollToResults();
@@ -459,71 +459,69 @@ dogBreedApp.usersChoices = (size, activity, attention, training) => {
 };
 
 
-// (10) DISPLAY USER'S DOG BREED INFORMATION FUNCTION
+// (10) DISPLAY DOG BREED INFORMATION (a function that takes the stored breed information and displays the associated image and text in the results section)
 dogBreedApp.displayBreedInfo = (breedName, imageSource, imageAlt, temperament, lifeExpec, group, similarBreeds, moreInfo) => {
     // display hidden results titles
-    $('.results-title').css({visibility: 'visible'});
+    $titles.css({visibility: 'visible'});
 
     // style & append breed photo to the results section
-    const image = $('<img>').attr('width', '95%').attr('src', imageSource).attr('alt', imageAlt).css({ border: '1px solid black', padding: '20px' });
-    $('.results-image').append(image);
+    const breedImage = $('<img>').attr('width', '95%').attr('src', imageSource).attr('alt', imageAlt).css({ border: '1px solid black', padding: '20px' });
+    $image.append(breedImage);
 
     // style & append breed name and information to the results section
-    $('.results-heading').append(`<h2 class="dynamic-heading">Your perfect breed is: <span class="dynamic-breed">${breedName}</span>!</h2>`);
+    $breed.append(`<h2 class="dynamic-heading">Your perfect breed is: <span class="dynamic-breed">${breedName}</span>!</h2>`);
 
     temperament.forEach((trait) => {
-        $('#temperament-list').append(`<li class="dynamic-text">${trait}</li>`)
+        $temperament.append(`<li class="dynamic-text">${trait}</li>`)
     });
 
-    $('.life-expec').append(`<p class="dynamic-text">${lifeExpec}</p>`);
+    $lifeExpec.append(`<p class="dynamic-text">${lifeExpec}</p>`);
 
-    $('.group').append(`<p class="dynamic-text">${group}</p>`);
+    $group.append(`<p class="dynamic-text">${group}</p>`);
 
     similarBreeds.forEach((breed) => {
-        $('#similar-breed-list').append(`<li class="dynamic-text">${breed}</li>`)
+        $similarBreeds.append(`<li class="dynamic-text">${breed}</li>`)
     });
 
-    $('.learn-more').append(moreInfo);
+    $learnMore.append(moreInfo);
 };
 
 
-// (11) SCROLL TO RESULTS FUNCTION 
+// (11) SCROLL TO RESULTS SECTION (a function that automatically brings user to their displayed results) 
 dogBreedApp.scrollToResults = () => {
-    // automatically scroll the page down to the results displayed in the results section
     $('html').animate({
         scrollTop: $('#results').offset().top
     }, 1000);
 };
 
 
-// (12) RESET FUNCTION
+// (12) RESET RESULTS (a function that removes all appended breed information and scrolls to the top of the page so the user can starts again & select different traits)
 dogBreedApp.chooseDifferentTraits = () => {
     // append a 'choose different traits' button beneath displayed image and text
     const chooseDifferentTraits = $('<button>').text('Choose Different Traits').addClass('generator-button');
-
-    $('.different-traits-button').append(chooseDifferentTraits);
+    $differentTraitsButton.append(chooseDifferentTraits);
 
     // when the 'choose different traits' button is clicked:
-    $('.different-traits-button').on('click', () => {
+    $differentTraitsButton.on('click', () => {
 
         // (a) remove all appended content
-        $('.results-heading').empty();
-        $('.results-image').empty();
-        $('#temperament-list').empty();
-        $('.life-expec p').empty();
-        $('.group p').empty();
-        $('#similar-breed-list').empty();
-        $('.learn-more').empty();
-        $('.different-traits-button').empty();
-        $('.results-title').css({ visibility: 'hidden' });
+        $breed.empty();
+        $image.empty();
+        $temperament.empty();
+        $lifeExpec.empty();
+        $group.empty();
+        $similarBreeds.empty();
+        $learnMore.empty();
+        $differentTraitsButton.empty();
+        $titles.css({ visibility: 'hidden' });
 
-        // (b) scroll to the top of the page to allow user to choose new options
+        // (b) scroll to the top of the page to allow user to choose new traits
         dogBreedApp.scrollToTop();
     });
 };
 
 
-// (13) SCROLL TO TOP OF PAGE FUNCTION
+// (13) SCROLL TO TOP OF PAGE (a function that automatically brings the user to the top of the page)
 dogBreedApp.scrollToTop = () => {
     $('html, body').animate({
         scrollTop: $('header').offset().top
@@ -531,16 +529,16 @@ dogBreedApp.scrollToTop = () => {
 };
 
 
-// (2) INIT FUNCTION
+// (2) INITIALIZATION (a function that initializes the app)
 dogBreedApp.init = () => {
     // upon app initialization, run the event listener functions
-    dogBreedApp.randomizedBreedEventListener();
+    dogBreedApp.randomBreedEventListener();
     dogBreedApp.formSubmitEventListener();
     dogBreedApp.nextQuestionEventListener();
 };
 
 
-// (1) DOCUMENT READY FUNCTION
+// (1) DOCUMENT READY (a function that waits for the document to load)
 $(function () {
     // once the DOM has loaded, initialize the app
     dogBreedApp.init();
