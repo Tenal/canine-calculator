@@ -1,0 +1,72 @@
+/* ------------------- MEDIA QUERIES ------------------- */
+/* MAJOR BREAKPOINT 1: small desktop & portrait tablet */
+@media (max-width: 940px) {
+    // HEADER
+    header h1 {
+        font-size: 7.4rem;
+    }
+
+}
+
+/* MAJOR BREAKPOINT 2: portrait tablet & landscape phone */
+@media (max-width: 768px) {
+    // HEADER
+    header {
+        background-image: url(../assets/header-ipad.jpg);
+            h1 {
+                font-size: 7rem;
+            }
+    }
+
+    // MAIN - FORM
+    .form-section fieldset {
+        legend {
+            margin: 20px auto 40px auto;
+        }
+        .three-options-container .option-center {
+            margin: 0;
+        }
+        .three-options-container,
+        .two-options-container {
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+                .option {
+                    width: calc(100% - 160px);
+                    margin: 0 80px 80px 80px;
+                }
+        }
+        .arrow {
+            margin: 0 0 20px 0;
+        }
+    }
+
+    .form-section fieldset{
+        margin: 0 auto;
+    }
+}
+
+/* MAJOR BREAKPOINT 3: landscape phone & down */
+@media (max-width: 480px) {
+    // HEADER
+    header {
+        background-image: url(../assets/header-mobile.jpg);
+        background-attachment: scroll;
+        background-position: center 35%;
+            h1 {
+                font-size: 5.4rem;
+            }
+    }
+
+    // MAIN - FORM
+    .form-section fieldset {
+        .three-options-container .option,
+        .two-options-container .option {
+            width: calc(100% - 100px);
+            margin: 0 50px 50px 50px;
+                label {
+                    margin-top: 20px;
+                }
+        }
+    }
+}

@@ -352,6 +352,7 @@ header div.text-container p {
 }
 
 .form-section {
+  border: 2px solid green;
   min-height: 100vh;
   padding: 15px 0;
   display: -webkit-box;
@@ -369,6 +370,7 @@ header div.text-container p {
 
 .form-section fieldset {
   border: none;
+  border: 1px solid red;
 }
 
 .form-section fieldset legend h2 {
@@ -456,7 +458,7 @@ header div.text-container p {
   width: 170px;
 }
 
-.three-options-container .option-3-center {
+.three-options-container .option-center {
   margin: 0 40px;
 }
 
@@ -549,4 +551,73 @@ footer div {
       -ms-flex-pack: justify;
           justify-content: space-between;
   margin-top: 60px;
+}
+
+/* ------------------- MEDIA QUERIES ------------------- */
+/* MAJOR BREAKPOINT 1: small desktop & portrait tablet */
+@media (max-width: 940px) {
+  header h1 {
+    font-size: 7.4rem;
+  }
+}
+
+/* MAJOR BREAKPOINT 2: portrait tablet & landscape phone */
+@media (max-width: 768px) {
+  header {
+    background-image: url(../assets/header-ipad.jpg);
+  }
+  header h1 {
+    font-size: 7rem;
+  }
+  .form-section fieldset legend {
+    margin: 20px auto 40px auto;
+  }
+  .form-section fieldset .three-options-container .option-center {
+    margin: 0;
+  }
+  .form-section fieldset .three-options-container,
+  .form-section fieldset .two-options-container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .form-section fieldset .three-options-container .option,
+  .form-section fieldset .two-options-container .option {
+    width: calc(100% - 160px);
+    margin: 0 80px 80px 80px;
+  }
+  .form-section fieldset .arrow {
+    margin: 0 0 20px 0;
+  }
+  .form-section fieldset {
+    margin: 0 auto;
+  }
+}
+
+/* MAJOR BREAKPOINT 3: landscape phone & down */
+@media (max-width: 480px) {
+  header {
+    background-image: url(../assets/header-mobile.jpg);
+    background-attachment: scroll;
+    background-position: center 35%;
+  }
+  header h1 {
+    font-size: 5.4rem;
+  }
+  .form-section fieldset .three-options-container .option,
+  .form-section fieldset .two-options-container .option {
+    width: calc(100% - 100px);
+    margin: 0 50px 50px 50px;
+  }
+  .form-section fieldset .three-options-container .option label,
+  .form-section fieldset .two-options-container .option label {
+    margin-top: 20px;
+  }
 }
