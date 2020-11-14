@@ -256,6 +256,10 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
+body, html {
+  overflow-x: hidden;
+}
+
 ul {
   list-style: none;
 }
@@ -352,7 +356,6 @@ header div.text-container p {
 }
 
 .form-section {
-  border: 2px solid green;
   min-height: 100vh;
   padding: 15px 0;
   display: -webkit-box;
@@ -370,7 +373,6 @@ header div.text-container p {
 
 .form-section fieldset {
   border: none;
-  border: 1px solid red;
 }
 
 .form-section fieldset legend h2 {
@@ -553,11 +555,22 @@ footer div {
   margin-top: 60px;
 }
 
+footer div p {
+  font-size: 2rem;
+}
+
+footer div a {
+  font-style: italic;
+}
+
 /* ------------------- MEDIA QUERIES ------------------- */
 /* MAJOR BREAKPOINT 1: small desktop & portrait tablet */
 @media (max-width: 940px) {
   header h1 {
     font-size: 7.4rem;
+  }
+  footer div p {
+    font-size: 1.5rem;
   }
 }
 
@@ -599,6 +612,22 @@ footer div {
   .form-section fieldset {
     margin: 0 auto;
   }
+  footer div {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    text-align: center;
+  }
+  footer div p {
+    line-height: 2rem;
+  }
 }
 
 /* MAJOR BREAKPOINT 3: landscape phone & down */
@@ -611,6 +640,16 @@ footer div {
   header h1 {
     font-size: 5.4rem;
   }
+  header div.text-container {
+    margin: 15vh auto 0 auto;
+    width: 270px;
+  }
+  .form-section fieldset legend {
+    margin-bottom: 20px;
+  }
+  .form-section fieldset legend h2 {
+    font-size: 2rem;
+  }
   .form-section fieldset .three-options-container .option,
   .form-section fieldset .two-options-container .option {
     width: calc(100% - 100px);
@@ -619,5 +658,10 @@ footer div {
   .form-section fieldset .three-options-container .option label,
   .form-section fieldset .two-options-container .option label {
     margin-top: 20px;
+    width: 160px;
+    font-size: 1.5rem;
+  }
+  footer div p:first-child {
+    width: 160px;
   }
 }

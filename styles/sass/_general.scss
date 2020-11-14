@@ -39,6 +39,10 @@ body {
     font-family: $body-font;
 }
 
+body, html { 
+    overflow-x:hidden; 
+}
+
 ul {
     list-style: none;
 }

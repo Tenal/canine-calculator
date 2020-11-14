@@ -6,6 +6,10 @@
         font-size: 7.4rem;
     }
 
+    // FOOTER
+    footer div p {
+        font-size: 1.5rem;
+    }
 }
 
 /* MAJOR BREAKPOINT 2: portrait tablet & landscape phone */
@@ -44,6 +48,17 @@
     .form-section fieldset{
         margin: 0 auto;
     }
+
+    // FOOTER
+    footer div {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+            p {
+                line-height: 2rem;
+            }
+    }
 }
 
 /* MAJOR BREAKPOINT 3: landscape phone & down */
@@ -56,17 +71,34 @@
             h1 {
                 font-size: 5.4rem;
             }
+            div.text-container {
+                margin: 15vh auto 0 auto;
+                width: 270px;
+            }
     }
 
     // MAIN - FORM
     .form-section fieldset {
+        legend {
+            margin-bottom: 20px;
+                h2 {
+                    font-size: 2rem;
+                }
+        }
         .three-options-container .option,
         .two-options-container .option {
             width: calc(100% - 100px);
             margin: 0 50px 50px 50px;
                 label {
                     margin-top: 20px;
+                    width: 160px;
+                    font-size: 1.5rem;
                 }
         }
+    }
+
+    // FOOTER
+    footer div p:first-child{
+        width: 160px;
     }
 }
