@@ -107,8 +107,13 @@
                 font-size: 5.4rem;
             }
             div.text-container {
-                margin: 15vh auto 0 auto;
+                margin: 10vh auto 60px auto;
                 width: 270px;
+                    .generator-button,
+                    .start {
+                        font-size: 1.5rem;
+                        width: 250px;
+                    }
             }
     }
 
