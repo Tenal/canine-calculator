@@ -53,14 +53,20 @@
     text-align: center;
 }
 
-.dynamic-breed {
+.dynamic-breed,
+.dynamic-links {
     border-bottom: 2px solid $option-active;
     font-style: italic;
         &:hover,
         &:focus,
         &:active {
-            color: $option-active
+            color: $option-active;
         }
+}
+
+.dynamic-links {
+    font-weight: 700;
+    border-bottom: 0;
 }
 
 .dynamic-text {
@@ -74,16 +80,12 @@
 }
 
 .dynamic-button {
+    width: 300px;
     background-color: $option;
     font-weight: 700;
-    width: 300px;
         &:hover,
         &active,
         &focus {
             background-color: $option-active;
         }
 }
-
-// .dynamic-links {
-//     // styling here for similar breeds
-// }

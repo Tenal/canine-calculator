@@ -14,7 +14,7 @@ dogBreedApp.dogSize = {
             temperament: ['Independent', 'Athletic', 'Clever'],
             lifeExpectancy: '13-15 years',
             group: 'Terrier Group',
-            similarBreeds: ['Jack Russell Terrier', 'Smooth Fox Terrier'],
+            similarBreeds: ['<a target="_blank" href="https://www.akc.org/dog-breeds/russell-terrier/">Jack Russell Terrier</a>', '<a target="_blank" href="https://www.akc.org/dog-breeds/smooth-fox-terrier/">Smooth Fox Terrier</a>'],
             breedLink: '<a target="_blank" href="https://www.akc.org/dog-breeds/parson-russell-terrier/">Parson Russell Terrier</a>'
         },
         {
@@ -27,7 +27,7 @@ dogBreedApp.dogSize = {
             temperament: ['Fearless', 'Energetic', 'Friendly'],
             lifeExpectancy: '12-16 years',
             group: 'Toy Group',
-            similarBreeds: ['Manchester Terrier', 'Rat Terrier'],
+            similarBreeds: ['<a target="_blank" href="https://www.akc.org/dog-breeds/manchester-terrier-toy/">Manchester Terrier</a>', '<a target="_blank" href="https://www.akc.org/dog-breeds/rat-terrier/">Rat Terrier</a>'],
             breedLink: '<a target="_blank" href="https://www.akc.org/dog-breeds/miniature-pinscher/">Miniature Pinscher</a>'
         },
         {
@@ -40,7 +40,7 @@ dogBreedApp.dogSize = {
             temperament: ['Affectionate', 'Playful', 'Alert'],
             lifeExpectancy: '12-13 years',
             group: 'Herding Group',
-            similarBreeds: ['Shih Tzu', 'Pomeranian'],
+            similarBreeds: ['<a target="_blank" href="https://www.akc.org/dog-breeds/shih-tzu/">Shih Tzu</a>', '<a target="_blank" href="https://www.akc.org/dog-breeds/pomeranian/">Pomeranian</a>'],
             breedLink: '<a target="_blank" href="https://www.akc.org/dog-breeds/pembroke-welsh-corgi/">Pembrooke Welsh Corgi</a>'
         },
         {
@@ -53,7 +53,7 @@ dogBreedApp.dogSize = {
             temperament: ['Intelligent', 'Obedient', 'Affectionate'],
             lifeExpectancy: '12-15 years',
             group: 'Terrier Group',
-            similarBreeds: ['Australian Terrier', 'Cairn Terrier'],
+            similarBreeds: ['<a target="_blank" href="https://www.akc.org/dog-breeds/australian-terrier/">Australian Terrier</a>', '<a target="_blank" href="https://www.akc.org/dog-breeds/cairn-terrier/">Cairn Terrier</a>'],
             breedLink: '<a target="_blank" href="https://www.akc.org/dog-breeds/border-terrier/">Border Terrier</a>'
         },
         {
@@ -66,7 +66,7 @@ dogBreedApp.dogSize = {
             temperament: ['Loving', 'Mischievous', 'Charming'],
             lifeExpectancy: '13-15 years',
             group: 'Toy Group',
-            similarBreeds: ['Pekingese', 'Brussels Griffon'],
+            similarBreeds: ['<a target="_blank" href="https://www.akc.org/dog-breeds/pekingese/">Pekingese</a>', '<a target="_blank" href="https://www.akc.org/dog-breeds/brussels-griffon/">Brussels Griffon</a>'],
             breedLink: '<a target="_blank" href="https://www.akc.org/dog-breeds/pug/">Pug</a>'
         },
         {
@@ -79,7 +79,7 @@ dogBreedApp.dogSize = {
             temperament: ['Friendly', 'Playful', 'Devoted'],
             lifeExpectancy: '12-16 years',
             group: 'Hound Group',
-            similarBreeds: ['Miniature Poodle', 'Papillon'],
+            similarBreeds: ['<a target="_blank" href="https://www.akc.org/dog-breeds/poodle-miniature/">Miniature Poodle</a>', '<a target="_blank" href="https://www.akc.org/dog-breeds/papillon/">Papillon</a>'],
             breedLink: '<a target="_blank" href="https://www.akc.org/dog-breeds/dachshund/">Dachshund</a>'
         },
         {
@@ -92,7 +92,7 @@ dogBreedApp.dogSize = {
             temperament: ['Adaptable', 'Playful', 'Alert'],
             lifeExpectancy: '10-12 years',
             group: 'Non-sporting Group',
-            similarBreeds: ['Boston Terrier', 'Havanese'],
+            similarBreeds: ['<a target="_blank" href="https://www.akc.org/dog-breeds/boston-terrier/">Boston Terrier</a>', '<a target="_blank" href="https://www.akc.org/dog-breeds/havanese/">Havanese</a>'],
             breedLink: '<a target="_blank" href="https://www.akc.org/dog-breeds/french-bulldog/">French Bulldog</a>'
         },
         {
@@ -106,7 +106,7 @@ dogBreedApp.dogSize = {
             temperament: ['Insolent', 'Demanding', 'Vocal'],
             lifeExpectancy: '10-20 years',
             group: 'Non-canine Group',
-            similarBreeds: ['British Shorthair', 'Bengal'],
+            similarBreeds: ['<a target="_blank" href="https://www.thesprucepets.com/why-cats-are-better-than-dogs-554880">Looks like a cat would be a better match for you, furriend!</a>'],
             breedLink: '<a target="_blank" href="https://www.catological.com/5-best-cat-breeds-lazy-people/">Domestic Shorthair Cat</a>'
         }
     ],
@@ -121,7 +121,7 @@ dogBreedApp.dogSize = {
             temperament: ['Independent', 'Athletic', 'Intelligent'],
             lifeExpectancy: '13-14 years',
             group: 'Hound Group',
-            similarBreeds: ['Ibizan Hound', 'American Foxhound'],
+            similarBreeds: ['<a target="_blank" href="https://www.akc.org/dog-breeds/ibizan-hound/">Ibizan Hound</a>', '<a target="_blank" href="https://www.akc.org/dog-breeds/american-foxhound/">American Foxhound</a>'],
             breedLink: '<a target="_blank" href="https://www.akc.org/dog-breeds/parson-russell-terrier/">Basenji</a>'
         },
         {
@@ -134,7 +134,7 @@ dogBreedApp.dogSize = {
             temperament: ['Alert', 'Athletic', 'Independent'],
             lifeExpectancy: '10-12 years',
             group: 'Miscellaneous Class',
-            similarBreeds: ['Podenco Canario', 'Ibizan Hound'],
+            similarBreeds: ['<a target="_blank" href="https://www.akc.org/dog-breeds/portuguese-podengo-pequeno/">Podenco Canario</a>', '<a target="_blank" href="https://www.akc.org/dog-breeds/pharaoh-hound/">Pharaoh Hound</a>'],
             breedLink: '<a target="_blank" href="https://www.akc.org/dog-breeds/portuguese-podengo/">Portuguese Podengo</a>'
         },
         {
@@ -147,7 +147,7 @@ dogBreedApp.dogSize = {
             temperament: ['Friendly', 'Determined', 'Gentle'],
             lifeExpectancy: '10-15 years',
             group: 'Hound Group',
-            similarBreeds: ['English Foxhound', 'Harrier'],
+            similarBreeds: ['<a target="_blank" href="https://www.akc.org/dog-breeds/english-foxhound/">English Foxhound</a>', '<a target="_blank" href="https://www.akc.org/dog-breeds/harrier/">Harrier</a>'],
             breedLink: '<a target="_blank" href="https://www.akc.org/dog-breeds/beagle/">Beagle</a>'
         },
         {
@@ -160,7 +160,7 @@ dogBreedApp.dogSize = {
             temperament: ['Playful', 'Intelligent', 'Energetic'],
             lifeExpectancy: '12-14 years',
             group: 'Herding Group',
-            similarBreeds: ['Rough Collie', 'Belgian Sheepdog'],
+            similarBreeds: ['<a target="_blank" href="https://www.akc.org/dog-breeds/collie/">Rough Collie</a>', '<a target="_blank" href="https://www.akc.org/dog-breeds/belgian-sheepdog/">Belgian Sheepdog</a>'],
             breedLink: '<a target="_blank" href="https://www.akc.org/dog-breeds/shetland-sheepdog/">Shetland Sheepdog</a>'
         },
         {
@@ -173,7 +173,7 @@ dogBreedApp.dogSize = {
             temperament: ['Friendly', 'Gregarious', 'Calm'],
             lifeExpectancy: '13-15 years',
             group: 'Non-Sporting Group',
-            similarBreeds: ['Bullmastiff', 'American Bulldog'],
+            similarBreeds: ['<a target="_blank" href="https://www.akc.org/dog-breeds/bullmastiff/">Bullmastiff</a>', '<a target="_blank" href="https://www.akc.org/dog-breeds/american-bulldog/">American Bulldog</a>'],
             breedLink: '<a target="_blank" href="https://www.akc.org/dog-breeds/bulldog/">English Bulldog</a>'
         },
         {
@@ -186,7 +186,7 @@ dogBreedApp.dogSize = {
             temperament: ['Affectionate', 'Clever', 'Courageous'],
             lifeExpectancy: '12-14 years',
             group: 'Terrier Group',
-            similarBreeds: ['Boxer', 'Presa Canario'],
+            similarBreeds: ['<a target="_blank" href="https://www.akc.org/dog-breeds/boxer/">Boxer</a>', '<a target="_blank" href="https://www.akc.org/dog-breeds/perro-de-presa-canario/">Presa Canario</a>'],
             breedLink: '<a target="_blank" href="https://www.akc.org/dog-breeds/staffordshire-bull-terrier/">Staffordshire Bull Terrier</a>'
         },
         {
@@ -199,7 +199,7 @@ dogBreedApp.dogSize = {
             temperament: ['Patient', 'Sweet-Tempered', 'Gentle'],
             lifeExpectancy: '12-13 years',
             group: 'Hound Group',
-            similarBreeds: ['Bloodhound', 'American Foxhound'],
+            similarBreeds: ['<a target="_blank" href="https://www.akc.org/dog-breeds/bloodhound/">Bloodhound</a>', '<a target="_blank" href="https://www.akc.org/dog-breeds/american-foxhound/">American Foxhound</a>'],
             breedLink: '<a target="_blank" href="https://www.akc.org/dog-breeds/basset-hound/">Basset Hound</a>'
         },
         {
@@ -212,7 +212,7 @@ dogBreedApp.dogSize = {
             temperament: ['Mischievous', 'Keen', 'Protective'],
             lifeExpectancy: '12-13 years',
             group: 'Terrier Group',
-            similarBreeds: ['Dandie Dinmont Terrier', 'Airedale Terrier'],
+            similarBreeds: ['<a target="_blank" href="https://www.akc.org/dog-breeds/bedlington-terrier/">Bedlington Terrier</a>', '<a target="_blank" href="https://www.akc.org/dog-breeds/airedale-terrier/">Airedale Terrier</a>'],
             breedLink: '<a target="_blank" href="https://www.akc.org/dog-breeds/bull-terrier/">Bull Terrier</a>'
         }
     ],
@@ -227,7 +227,7 @@ dogBreedApp.dogSize = {
             temperament: ['Alert', 'Energetic', 'Obedient'],
             lifeExpectancy: '12-16 years',
             group: 'Herding Group',
-            similarBreeds: ['Belgian Sheepdog', 'Australian Shepherd'],
+            similarBreeds: ['<a target="_blank" href="https://www.akc.org/dog-breeds/belgian-tervuren/">Belgian Tervuren</a>', '<a target="_blank" href="https://www.akc.org/dog-breeds/australian-shepherd/">Australian Shepherd</a>'],
             breedLink: '<a target="_blank" href="https://www.akc.org/dog-breeds/australian-cattle-dog/">Australian Cattle Dog</a>'
         },
         {
@@ -240,7 +240,7 @@ dogBreedApp.dogSize = {
             temperament: ['Boisterous', 'Smart', 'Bold'],
             lifeExpectancy: '10-12 years',
             group: 'Sporting Group',
-            similarBreeds: ['Gordon Setter', 'Brittany'],
+            similarBreeds: ['<a target="_blank" href="https://www.akc.org/dog-breeds/gordon-setter/">Gordon Setter</a>', '<a target="_blank" href="https://www.akc.org/dog-breeds/brittany/">Brittany</a>'],
             breedLink: '<a target="_blank" href="https://www.akc.org/dog-breeds/german-shorthaired-pointer/">German Shorthaired Pointer</a>'
         },
         {
@@ -253,7 +253,7 @@ dogBreedApp.dogSize = {
             temperament: ['Mischievous', 'Friendly', 'Outgoing'],
             lifeExpectancy: '12-14 years',
             group: 'Working Group',
-            similarBreeds: ['Akita Inu', 'Alaskan Malamute'],
+            similarBreeds: ['<a target="_blank" href="https://www.akc.org/dog-breeds/akita/">Akita</a>', '<a target="_blank" href="https://www.akc.org/dog-breeds/alaskan-malamute/">Alaskan Malamute</a>'],
             breedLink: '<a target="_blank" href="https://www.akc.org/dog-breeds/siberian-husky/">Siberian Husky</a>'
         },
         {
@@ -266,7 +266,7 @@ dogBreedApp.dogSize = {
             temperament: ['Active', 'Friendly', 'Intelligent'],
             lifeExpectancy: '10-12 years',
             group: 'Sporting Group',
-            similarBreeds: ['Golden Retriever', 'Border Collie'],
+            similarBreeds: ['<a target="_blank" href="https://www.akc.org/dog-breeds/golden-retriever/">Golden Retriever</a>', '<a target="_blank" href="https://www.akc.org/dog-breeds/border-collie/">Border Collie</a>'],
             breedLink: '<a target="_blank" href="https://www.akc.org/dog-breeds/labrador-retriever/">Labrador Retriever</a>'
         },
         {
@@ -279,7 +279,7 @@ dogBreedApp.dogSize = {
             temperament: ['Friendly', 'Loving', 'Patient'],
             lifeExpectancy: '7-10 years',
             group: 'Working Group',
-            similarBreeds: ['Neapolitan Mastiff', 'Saint Bernard'],
+            similarBreeds: ['<a target="_blank" href="https://www.akc.org/dog-breeds/neapolitan-mastiff/">Neapolitan Mastiff</a>', '<a target="_blank" href="https://www.akc.org/dog-breeds/st-bernard/">Saint Bernard</a>'],
             breedLink: '<a target="_blank" href="https://www.akc.org/dog-breeds/great-dane/">Great Dane</a>'
         },
         {
@@ -292,7 +292,7 @@ dogBreedApp.dogSize = {
             temperament: ['Gentle', 'Affectionate', 'Quiet'],
             lifeExpectancy: '12-14 years',
             group: 'Sporting Group',
-            similarBreeds: ['Weimaraner', 'Redbone Coonhound'],
+            similarBreeds: ['<a target="_blank" href="https://www.akc.org/dog-breeds/weimaraner/">Weimaraner</a>', '<a target="_blank" href="https://www.akc.org/dog-breeds/redbone-coonhound/">Redbone Coonhound</a>'],
             breedLink: '<a target="_blank" href="https://www.akc.org/dog-breeds/vizsla/">Vizsla</a>'
         },
         {
@@ -305,7 +305,7 @@ dogBreedApp.dogSize = {
             temperament: ['Quiet', 'Independent', 'Gentle'],
             lifeExpectancy: '10-13 years',
             group: 'Hound Group',
-            similarBreeds: ['Irish Wolfhound', 'Afghan Hound'],
+            similarBreeds: ['<a target="_blank" href="https://www.akc.org/dog-breeds/irish-wolfhound/">Irish Wolfhound</a>', '<a target="_blank" href="https://www.akc.org/dog-breeds/afghan-hound/">Afghan Hound</a>'],
             breedLink: '<a target="_blank" href="https://www.akc.org/dog-breeds/greyhound/">Greyhound</a>'
         },
         {
@@ -318,7 +318,7 @@ dogBreedApp.dogSize = {
             temperament: ['Inquisitive', 'Independent', 'Protective'],
             lifeExpectancy: '10-14 years',
             group: 'Foundation Stock Service',
-            similarBreeds: ['Rhodesian Ridgeback', 'Black and Tan Coonhound'],
+            similarBreeds: ['<a target="_blank" href="https://www.akc.org/dog-breeds/rhodesian-ridgeback/">Rhodesian Ridgeback</a>', '<a target="_blank" href="https://www.akc.org/dog-breeds/black-and-tan-coonhound/">Black and Tan Coonhound</a>'],
             breedLink: '<a target="_blank" href="https://www.akc.org/dog-breeds/catahoula-leopard-dog/">Catahoula Leopard Dog</a>'
         }
     ]
@@ -482,7 +482,7 @@ dogBreedApp.displayBreedInfo = (imageSource, imageAlt, temperament, lifeExpec, g
     $group.append(`<p class="dynamic-text">${group}</p>`);
 
     similarBreeds.forEach((breed) => {
-        $similarBreeds.append(`<li class="dynamic-text">${breed}</li>`)
+        $similarBreeds.append(`<li class="dynamic-text dynamic-links">${breed}</li>`)
     });
 };
 

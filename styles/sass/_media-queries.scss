@@ -1,3 +1,11 @@
+/* MINOR BREAKPOINT 1: large desktops */
+@media (min-width: 1250px) {
+    // HEADER
+    header div.text-container {
+        margin-top: 20vh;
+    }
+}
+
 /* MAJOR BREAKPOINT 1: small desktop & portrait tablet */
 @media (max-width: 940px) {
     // HEADER

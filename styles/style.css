@@ -495,6 +495,7 @@ header div.text-container p {
           transform: scale(1);
   -webkit-animation: pulse 2s 3;
           animation: pulse 2s 3;
+  background-color: #577e98;
 }
 
 .results {
@@ -586,13 +587,22 @@ header div.text-container p {
   text-align: center;
 }
 
-.dynamic-breed {
+.dynamic-breed,
+.dynamic-links {
   border-bottom: 2px solid #DA972F;
   font-style: italic;
 }
 
-.dynamic-breed:hover, .dynamic-breed:focus, .dynamic-breed:active {
+.dynamic-breed:hover, .dynamic-breed:focus, .dynamic-breed:active,
+.dynamic-links:hover,
+.dynamic-links:focus,
+.dynamic-links:active {
   color: #DA972F;
+}
+
+.dynamic-links {
+  font-weight: 700;
+  border-bottom: 0;
 }
 
 .dynamic-text {
@@ -607,9 +617,9 @@ header div.text-container p {
 }
 
 .dynamic-button {
+  width: 300px;
   background-color: #e9bd5f;
   font-weight: 700;
-  width: 300px;
 }
 
 .dynamic-button:hover, .dynamic-buttonactive, .dynamic-buttonfocus {
@@ -640,6 +650,13 @@ footer div p {
 footer div a {
   font-style: italic;
   opacity: 0.5;
+}
+
+/* MINOR BREAKPOINT 1: large desktops */
+@media (min-width: 1250px) {
+  header div.text-container {
+    margin-top: 20vh;
+  }
 }
 
 /* MAJOR BREAKPOINT 1: small desktop & portrait tablet */
