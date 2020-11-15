@@ -31,17 +31,24 @@ header {
 
 // BUTTON STYLING ----------
 .generator-button {
-    font-size: 2rem;
+    font-size: 1.7rem;
+    text-transform: uppercase;
     text-align: center;
+    font-family: $body-font;
     background-color: $secondary-colour;
     border: 1px solid $font-colour;
-    padding: 10px 20px;
+    box-shadow: 0 2px 3px $font-colour;
+    padding: 10px 0;
+    width: 260px;
     margin: 15px 0 10px 0;
     transition: 0.3s all;
     cursor: pointer;
-        &:hover {
+        &:hover,
+        &:active,
+        &:focus {
             background-color: $primary-colour;
-        }
+            letter-spacing: 1.3px;
+    }
 }
 
 // 'NEXT QUESTION' LINK STYLING ----------
@@ -52,6 +59,7 @@ header {
     text-align: center;
     background-color: $option;
     border: 1px solid $font-colour;
+    box-shadow: 0 2px 3px $font-colour;
     margin-top: 17px;
     padding: 10px 0;
     width: 260px;
@@ -61,7 +69,7 @@ header {
         &:focus,
         &:active {
             background-color: $option-active;
-            letter-spacing: 3px;
+            letter-spacing: 1.5px;
         }
 }
 

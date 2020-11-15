@@ -1,10 +1,17 @@
 // DYNAMIC RESULTS STYLING ----------
-.results-container-main,
-.results-container-secondary {
+.results {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
+    display: none;
+        .results-container-main,
+        .results-container-secondary {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+        }
 }
 
 .results-image-and-text {
@@ -12,7 +19,7 @@
     justify-content: center;
         .results-image,
         .results-text {
-            width: 40%;
+            width: 37%;
         }
         .results-text {
             padding: 0 20px;
@@ -27,7 +34,7 @@
                     text-transform: uppercase;
                     font-size: 2rem;
                     line-height: 3rem;
-                    letter-spacing: 0.6rem;
+                    letter-spacing: 0.5rem;
                     visibility: hidden;
                     margin-bottom: 7px;
                 }
@@ -35,14 +42,25 @@
 }
 
 // CLASSES FOR MINOR STYLING OG APPENDED BREED TEXT (APPLIED IN JS) ---------- 
+.result-height {
+    display: flex;
+    min-height: 100vh;
+}
+
 .dynamic-heading {
     font-size: 3.5rem;
-    margin: 20px 0 15px 0;
+    margin: 0 0 15px 0;
     text-align: center;
 }
 
 .dynamic-breed {
-    color: $option-active;
+    border-bottom: 2px solid $option-active;
+    font-style: italic;
+        &:hover,
+        &:focus,
+        &:active {
+            color: $option-active
+        }
 }
 
 .dynamic-text {
@@ -53,6 +71,17 @@
 .dynamic-image {
     box-shadow: 0 0 5px $font-colour;
     background-color: $secondary-colour;
+}
+
+.dynamic-button {
+    background-color: $option;
+    font-weight: 700;
+    width: 300px;
+        &:hover,
+        &active,
+        &focus {
+            background-color: $option-active;
+        }
 }
 
 // .dynamic-links {

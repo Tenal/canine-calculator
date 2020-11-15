@@ -15,7 +15,7 @@ dogBreedApp.dogSize = {
             lifeExpectancy: '13-15 years',
             group: 'Terrier Group',
             similarBreeds: ['Jack Russell Terrier', 'Smooth Fox Terrier'],
-            learnMore: '<a href="https://www.akc.org/dog-breeds/parson-russell-terrier/">Learn More</a>'
+            breedLink: '<a target="_blank" href="https://www.akc.org/dog-breeds/parson-russell-terrier/">Parson Russell Terrier</a>'
         },
         {
             activityLevel: 'high',
@@ -28,7 +28,7 @@ dogBreedApp.dogSize = {
             lifeExpectancy: '12-16 years',
             group: 'Toy Group',
             similarBreeds: ['Manchester Terrier', 'Rat Terrier'],
-            learnMore: '<a href="https://www.akc.org/dog-breeds/miniature-pinscher/">Learn More</a>'
+            breedLink: '<a target="_blank" href="https://www.akc.org/dog-breeds/miniature-pinscher/">Miniature Pinscher</a>'
         },
         {
             activityLevel: 'high',
@@ -41,7 +41,7 @@ dogBreedApp.dogSize = {
             lifeExpectancy: '12-13 years',
             group: 'Herding Group',
             similarBreeds: ['Shih Tzu', 'Pomeranian'],
-            learnMore: '<a href="https://www.akc.org/dog-breeds/pembroke-welsh-corgi/">Learn More</a>'
+            breedLink: '<a target="_blank" href="https://www.akc.org/dog-breeds/pembroke-welsh-corgi/">Pembrooke Welsh Corgi</a>'
         },
         {
             activityLevel: 'high',
@@ -54,7 +54,7 @@ dogBreedApp.dogSize = {
             lifeExpectancy: '12-15 years',
             group: 'Terrier Group',
             similarBreeds: ['Australian Terrier', 'Cairn Terrier'],
-            learnMore: '<a href="https://www.akc.org/dog-breeds/border-terrier/">Learn More</a>'
+            breedLink: '<a target="_blank" href="https://www.akc.org/dog-breeds/border-terrier/">Border Terrier</a>'
         },
         {
             activityLevel: 'low',
@@ -67,7 +67,7 @@ dogBreedApp.dogSize = {
             lifeExpectancy: '13-15 years',
             group: 'Toy Group',
             similarBreeds: ['Pekingese', 'Brussels Griffon'],
-            learnMore: '<a href="https://www.akc.org/dog-breeds/pug/">Learn More</a>'
+            breedLink: '<a target="_blank" href="https://www.akc.org/dog-breeds/pug/">Pug</a>'
         },
         {
             activityLevel: 'low',
@@ -80,7 +80,7 @@ dogBreedApp.dogSize = {
             lifeExpectancy: '12-16 years',
             group: 'Hound Group',
             similarBreeds: ['Miniature Poodle', 'Papillon'],
-            learnMore: '<a href="https://www.akc.org/dog-breeds/dachshund/">Learn More</a>'
+            breedLink: '<a target="_blank" href="https://www.akc.org/dog-breeds/dachshund/">Dachshund</a>'
         },
         {
             activityLevel: 'low',
@@ -93,7 +93,7 @@ dogBreedApp.dogSize = {
             lifeExpectancy: '10-12 years',
             group: 'Non-sporting Group',
             similarBreeds: ['Boston Terrier', 'Havanese'],
-            learnMore: '<a href="https://www.akc.org/dog-breeds/french-bulldog/">Learn More</a>'
+            breedLink: '<a target="_blank" href="https://www.akc.org/dog-breeds/french-bulldog/">French Bulldog</a>'
         },
         {
             activityLevel: 'low',
@@ -107,7 +107,7 @@ dogBreedApp.dogSize = {
             lifeExpectancy: '10-20 years',
             group: 'Non-canine Group',
             similarBreeds: ['British Shorthair', 'Bengal'],
-            learnMore: '<a href="https://www.akc.org/dog-breeds/french-bulldog/">Learn More</a>'
+            breedLink: '<a target="_blank" href="https://www.catological.com/5-best-cat-breeds-lazy-people/">Domestic Shorthair Cat</a>'
         }
     ],
     medium: [
@@ -122,7 +122,7 @@ dogBreedApp.dogSize = {
             lifeExpectancy: '13-14 years',
             group: 'Hound Group',
             similarBreeds: ['Ibizan Hound', 'American Foxhound'],
-            learnMore: '<a href="https://www.akc.org/dog-breeds/parson-russell-terrier/">Learn More</a>'
+            breedLink: '<a target="_blank" href="https://www.akc.org/dog-breeds/parson-russell-terrier/">Basenji</a>'
         },
         {
             activityLevel: 'high',
@@ -135,7 +135,7 @@ dogBreedApp.dogSize = {
             lifeExpectancy: '10-12 years',
             group: 'Miscellaneous Class',
             similarBreeds: ['Podenco Canario', 'Ibizan Hound'],
-            learnMore: '<a href="https://www.akc.org/dog-breeds/portuguese-podengo/">Learn More</a>'
+            breedLink: '<a target="_blank" href="https://www.akc.org/dog-breeds/portuguese-podengo/">Portuguese Podengo</a>'
         },
         {
             activityLevel: 'high',
@@ -148,7 +148,7 @@ dogBreedApp.dogSize = {
             lifeExpectancy: '10-15 years',
             group: 'Hound Group',
             similarBreeds: ['English Foxhound', 'Harrier'],
-            learnMore: '<a href="https://www.akc.org/dog-breeds/beagle/">Learn More</a>'
+            breedLink: '<a target="_blank" href="https://www.akc.org/dog-breeds/beagle/">Beagle</a>'
         },
         {
             activityLevel: 'high',
@@ -161,7 +161,7 @@ dogBreedApp.dogSize = {
             lifeExpectancy: '12-14 years',
             group: 'Herding Group',
             similarBreeds: ['Rough Collie', 'Belgian Sheepdog'],
-            learnMore: '<a href="https://www.akc.org/dog-breeds/shetland-sheepdog/">Learn More</a>'
+            breedLink: '<a target="_blank" href="https://www.akc.org/dog-breeds/shetland-sheepdog/">Shetland Sheepdog</a>'
         },
         {
             activityLevel: 'low',
@@ -174,7 +174,7 @@ dogBreedApp.dogSize = {
             lifeExpectancy: '13-15 years',
             group: 'Non-Sporting Group',
             similarBreeds: ['Bullmastiff', 'American Bulldog'],
-            learnMore: '<a href="https://www.akc.org/dog-breeds/bulldog/">Learn More</a>'
+            breedLink: '<a target="_blank" href="https://www.akc.org/dog-breeds/bulldog/">English Bulldog</a>'
         },
         {
             activityLevel: 'low',
@@ -187,7 +187,7 @@ dogBreedApp.dogSize = {
             lifeExpectancy: '12-14 years',
             group: 'Terrier Group',
             similarBreeds: ['Boxer', 'Presa Canario'],
-            learnMore: '<a href="https://www.akc.org/dog-breeds/staffordshire-bull-terrier/">Learn More</a>'
+            breedLink: '<a target="_blank" href="https://www.akc.org/dog-breeds/staffordshire-bull-terrier/">Staffordshire Bull Terrier</a>'
         },
         {
             activityLevel: 'low',
@@ -200,7 +200,7 @@ dogBreedApp.dogSize = {
             lifeExpectancy: '12-13 years',
             group: 'Hound Group',
             similarBreeds: ['Bloodhound', 'American Foxhound'],
-            learnMore: '<a href="https://www.akc.org/dog-breeds/basset-hound/">Learn More</a>'
+            breedLink: '<a target="_blank" href="https://www.akc.org/dog-breeds/basset-hound/">Basset Hound</a>'
         },
         {
             activityLevel: 'low',
@@ -213,7 +213,7 @@ dogBreedApp.dogSize = {
             lifeExpectancy: '12-13 years',
             group: 'Terrier Group',
             similarBreeds: ['Dandie Dinmont Terrier', 'Airedale Terrier'],
-            learnMore: '<a href="https://www.akc.org/dog-breeds/bull-terrier/">Learn More</a>'
+            breedLink: '<a target="_blank" href="https://www.akc.org/dog-breeds/bull-terrier/">Bull Terrier</a>'
         }
     ],
     large: [
@@ -228,7 +228,7 @@ dogBreedApp.dogSize = {
             lifeExpectancy: '12-16 years',
             group: 'Herding Group',
             similarBreeds: ['Belgian Sheepdog', 'Australian Shepherd'],
-            learnMore: '<a href="https://www.akc.org/dog-breeds/australian-cattle-dog/">Learn More</a>'
+            breedLink: '<a target="_blank" href="https://www.akc.org/dog-breeds/australian-cattle-dog/">Australian Cattle Dog</a>'
         },
         {
             activityLevel: 'high',
@@ -241,7 +241,7 @@ dogBreedApp.dogSize = {
             lifeExpectancy: '10-12 years',
             group: 'Sporting Group',
             similarBreeds: ['Gordon Setter', 'Brittany'],
-            learnMore: '<a href="https://www.akc.org/dog-breeds/german-shorthaired-pointer/">Learn More</a>'
+            breedLink: '<a target="_blank" href="https://www.akc.org/dog-breeds/german-shorthaired-pointer/">German Shorthaired Pointer</a>'
         },
         {
             activityLevel: 'high',
@@ -254,7 +254,7 @@ dogBreedApp.dogSize = {
             lifeExpectancy: '12-14 years',
             group: 'Working Group',
             similarBreeds: ['Akita Inu', 'Alaskan Malamute'],
-            learnMore: '<a href="https://www.akc.org/dog-breeds/siberian-husky/">Learn More</a>'
+            breedLink: '<a target="_blank" href="https://www.akc.org/dog-breeds/siberian-husky/">Siberian Husky</a>'
         },
         {
             activityLevel: 'high',
@@ -267,7 +267,7 @@ dogBreedApp.dogSize = {
             lifeExpectancy: '10-12 years',
             group: 'Sporting Group',
             similarBreeds: ['Golden Retriever', 'Border Collie'],
-            learnMore: '<a href="https://www.akc.org/dog-breeds/labrador-retriever/">Learn More</a>'
+            breedLink: '<a target="_blank" href="https://www.akc.org/dog-breeds/labrador-retriever/">Labrador Retriever</a>'
         },
         {
             activityLevel: 'low',
@@ -280,7 +280,7 @@ dogBreedApp.dogSize = {
             lifeExpectancy: '7-10 years',
             group: 'Working Group',
             similarBreeds: ['Neapolitan Mastiff', 'Saint Bernard'],
-            breedLink: '<a href="https://www.akc.org/dog-breeds/great-dane/">Great Dane</a>'
+            breedLink: '<a target="_blank" href="https://www.akc.org/dog-breeds/great-dane/">Great Dane</a>'
         },
         {
             activityLevel: 'low',
@@ -293,7 +293,7 @@ dogBreedApp.dogSize = {
             lifeExpectancy: '12-14 years',
             group: 'Sporting Group',
             similarBreeds: ['Weimaraner', 'Redbone Coonhound'],
-            learnMore: '<a href="https://www.akc.org/dog-breeds/vizsla/">Learn More</a>'
+            breedLink: '<a target="_blank" href="https://www.akc.org/dog-breeds/vizsla/">Vizsla</a>'
         },
         {
             activityLevel: 'low',
@@ -306,7 +306,7 @@ dogBreedApp.dogSize = {
             lifeExpectancy: '10-13 years',
             group: 'Hound Group',
             similarBreeds: ['Irish Wolfhound', 'Afghan Hound'],
-            learnMore: '<a href="https://www.akc.org/dog-breeds/greyhound/">Learn More</a>'
+            breedLink: '<a target="_blank" href="https://www.akc.org/dog-breeds/greyhound/">Greyhound</a>'
         },
         {
             activityLevel: 'low',
@@ -319,13 +319,14 @@ dogBreedApp.dogSize = {
             lifeExpectancy: '10-14 years',
             group: 'Foundation Stock Service',
             similarBreeds: ['Rhodesian Ridgeback', 'Black and Tan Coonhound'],
-            learnMore: '<a href="https://www.akc.org/dog-breeds/catahoula-leopard-dog/">Learn More</a>'
+            breedLink: '<a target="_blank" href="https://www.akc.org/dog-breeds/catahoula-leopard-dog/">Catahoula Leopard Dog</a>'
         }
     ]
 };
 
 
 // (3) CACHED SELECTORS (caching selectors that will be used 2+ times)
+const $results = $('#results');
 const $breed = $('#results-heading');
 const $image = $('#results-image');
 const $temperament = $('#temperament-list');
@@ -448,6 +449,7 @@ dogBreedApp.generatedBreed = (size, activity, attention, training) => {
             $similarBreeds.empty();
             $differentTraitsButton.empty();
             $titles.css({ visibility: 'hidden' });
+            $results.removeClass('result-height');
 
             // run the functions to display the breed information & automatically bring the user to the displayed results
             dogBreedApp.displayBreedInfo(usersBreedImage, usersBreedImageAlt, usersBreedTemperament, usersBreedLifeExpect, usersBreedGroup, usersSimilarBreeds, usersBreedLink);
@@ -460,15 +462,16 @@ dogBreedApp.generatedBreed = (size, activity, attention, training) => {
 
 // (10) DISPLAY DOG BREED INFORMATION (a function that takes the stored breed information and displays the associated image and text in the results section)
 dogBreedApp.displayBreedInfo = (imageSource, imageAlt, temperament, lifeExpec, group, similarBreeds, breedLink) => {
-    // display hidden results titles
+    // display hidden results titles & make results section 100vh
     $titles.css({visibility: 'visible'});
+    $results.addClass('result-height');
 
     // style & append breed photo to the results section
     const breedImage = $('<img>').attr('src', imageSource).attr('alt', imageAlt).css({ border: '1px solid black', padding: '10px'}).addClass('dynamic-image');
     $image.append(breedImage);
 
     // style & append breed name and information to the results section
-    $breed.append(`<h2 class="dynamic-heading">Your perfect breed is: <span class="dynamic-breed">${breedLink}</span>!</h2>`);
+    $breed.append(`<h2 class="dynamic-heading">Your perfect breed is: <span class="dynamic-breed">${breedLink}</span></h2>`);
 
     temperament.forEach((trait) => {
         $temperament.append(`<li class="dynamic-text">${trait}</li>`)
@@ -495,7 +498,7 @@ dogBreedApp.scrollToResults = () => {
 // (12) RESET RESULTS (a function that removes all appended breed information and scrolls to the top of the page so the user can starts again & select different traits)
 dogBreedApp.chooseDifferentTraits = () => {
     // append a 'choose different traits' button beneath displayed image and text
-    const chooseDifferentTraits = $('<button>').text('Choose Different Traits').addClass('generator-button');
+    const chooseDifferentTraits = $('<button>').text('Choose Different Traits').addClass('generator-button dynamic-button');
     $differentTraitsButton.append(chooseDifferentTraits);
 
     // when the 'choose different traits' button is clicked:
@@ -510,6 +513,7 @@ dogBreedApp.chooseDifferentTraits = () => {
         $similarBreeds.empty();
         $differentTraitsButton.empty();
         $titles.css({ visibility: 'hidden' });
+        $results.removeClass('result-height');
 
         // (b) scroll to the top of the page to allow user to choose new traits
         dogBreedApp.scrollToTop();

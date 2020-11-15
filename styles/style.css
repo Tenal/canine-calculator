@@ -317,19 +317,25 @@ header div.text-container p {
 }
 
 .generator-button {
-  font-size: 2rem;
+  font-size: 1.7rem;
+  text-transform: uppercase;
   text-align: center;
+  font-family: "Roboto", sans-serif;
   background-color: #7397AF;
   border: 1px solid #000000;
-  padding: 10px 20px;
+  -webkit-box-shadow: 0 2px 3px #000000;
+          box-shadow: 0 2px 3px #000000;
+  padding: 10px 0;
+  width: 260px;
   margin: 15px 0 10px 0;
   -webkit-transition: 0.3s all;
   transition: 0.3s all;
   cursor: pointer;
 }
 
-.generator-button:hover {
+.generator-button:hover, .generator-button:active, .generator-button:focus {
   background-color: #ABC5D2;
+  letter-spacing: 1.3px;
 }
 
 .start {
@@ -338,6 +344,8 @@ header div.text-container p {
   text-align: center;
   background-color: #e9bd5f;
   border: 1px solid #000000;
+  -webkit-box-shadow: 0 2px 3px #000000;
+          box-shadow: 0 2px 3px #000000;
   margin-top: 17px;
   padding: 10px 0;
   width: 260px;
@@ -348,7 +356,7 @@ header div.text-container p {
 
 .start:hover, .start:focus, .start:active {
   background-color: #DA972F;
-  letter-spacing: 3px;
+  letter-spacing: 1.5px;
 }
 
 .arrow {
@@ -475,8 +483,39 @@ header div.text-container p {
   margin: 0 40px;
 }
 
-.results-container-main,
-.results-container-secondary {
+.form-button {
+  height: 60px;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 50px;
+}
+
+.form-button:hover, .form-button:active, .form-button:focus {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  -webkit-animation: pulse 2s 3;
+          animation: pulse 2s 3;
+}
+
+.results {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: none;
+}
+
+.results .results-container-main,
+.results .results-container-secondary {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -503,7 +542,7 @@ header div.text-container p {
 
 .results-image-and-text .results-image,
 .results-image-and-text .results-text {
-  width: 40%;
+  width: 37%;
 }
 
 .results-image-and-text .results-text {
@@ -529,18 +568,30 @@ header div.text-container p {
   text-transform: uppercase;
   font-size: 2rem;
   line-height: 3rem;
-  letter-spacing: 0.6rem;
+  letter-spacing: 0.5rem;
   visibility: hidden;
   margin-bottom: 7px;
 }
 
+.result-height {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  min-height: 100vh;
+}
+
 .dynamic-heading {
   font-size: 3.5rem;
-  margin: 20px 0 15px 0;
+  margin: 0 0 15px 0;
   text-align: center;
 }
 
 .dynamic-breed {
+  border-bottom: 2px solid #DA972F;
+  font-style: italic;
+}
+
+.dynamic-breed:hover, .dynamic-breed:focus, .dynamic-breed:active {
   color: #DA972F;
 }
 
@@ -553,6 +604,16 @@ header div.text-container p {
   -webkit-box-shadow: 0 0 5px #000000;
           box-shadow: 0 0 5px #000000;
   background-color: #7397AF;
+}
+
+.dynamic-button {
+  background-color: #e9bd5f;
+  font-weight: 700;
+  width: 300px;
+}
+
+.dynamic-button:hover, .dynamic-buttonactive, .dynamic-buttonfocus {
+  background-color: #DA972F;
 }
 
 footer {
@@ -573,10 +634,12 @@ footer div {
 
 footer div p {
   font-size: 2rem;
+  opacity: 0.7;
 }
 
 footer div a {
   font-style: italic;
+  opacity: 0.5;
 }
 
 /* MAJOR BREAKPOINT 1: small desktop & portrait tablet */
