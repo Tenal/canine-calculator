@@ -622,7 +622,7 @@ header div.text-container p {
   font-weight: 700;
 }
 
-.dynamic-button:hover, .dynamic-buttonactive, .dynamic-buttonfocus {
+.dynamic-button:hover, .dynamic-button:active, .dynamic-button:focus {
   background-color: #DA972F;
 }
 

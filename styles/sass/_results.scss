@@ -84,8 +84,8 @@
     background-color: $option;
     font-weight: 700;
         &:hover,
-        &active,
-        &focus {
+        &:active,
+        &:focus {
             background-color: $option-active;
         }
 }
