@@ -326,28 +326,18 @@ dogBreedApp.dogSize = {
 
 
 // (3) CACHED SELECTORS (caching selectors that will be used 2+ times)
-const $results = $('#results');
-const $breed = $('#results-heading');
-const $image = $('#results-image');
-const $temperament = $('#temperament-list');
-const $lifeExpec = $('#life-expec');
-const $group = $('#group');
-const $similarBreeds = $('#similar-breed-list');
-const $differentTraitsButton = $('#different-traits-button');
-const $titles = $('.results-title');
-// (3) CACHED SELECTORS (caching selectors that will be used 2+ times)
-    // const results = document.querySelectorAll('#results');
-    // const breedName = document.querySelectorAll('#results-heading');
-    // const image = document.querySelectorAll('#results-image');
-    // const temperament = document.querySelectorAll('#temperament-list');
-    // const lifeExpec = document.querySelectorAll('#life-expec');
-    // const group = document.querySelectorAll('#group');
-    // const similarBreeds = document.querySelectorAll('#similar-breed-list');
-    // const differentTraitsButton = document.querySelectorAll('#different-traits-button');
-    // const titles = document.querySelectorAll('.results-title');
+    const $results = $('#results');
+    const $breed = $('#results-heading');
+    const $image = $('#results-image');
+    const $temperament = $('#temperament-list');
+    const $lifeExpec = $('#life-expec');
+    const $group = $('#group');
+    const $similarBreeds = $('#similar-breed-list');
+    const $differentTraitsButton = $('#different-traits-button');
+    const $titles = $('.results-title');
 
 
-// (4) NEXT QUESTION EVENT LISTENER (a function that brings the user to the following question when the user clicks the 'first question' or 'next question' (arrow icons) links)
+// VJS (4) NEXT QUESTION EVENT LISTENER (a function that brings the user to the following question when the user clicks the 'first question' or 'next question' (arrow icons) links)
 dogBreedApp.nextQuestionEventListener = function () {
     // select all elements with a class of 'scroll'
     const links = document.querySelectorAll('.scroll');
@@ -370,7 +360,7 @@ dogBreedApp.nextQuestionEventListener = function () {
 }
 
 
-// (5) RANDOM BREED EVENT LISTENER (a function that runs the function that generates random trait choices when the user clicks the 'random breed' button)
+// VJS (5) RANDOM BREED EVENT LISTENER (a function that runs the function that generates random trait choices when the user clicks the 'random breed' button)
 dogBreedApp.randomBreedEventListener = () => {
     // listen for when the user clicks the button
     document.querySelector('#random-breed').addEventListener('click', function () {
@@ -380,7 +370,7 @@ dogBreedApp.randomBreedEventListener = () => {
 }
 
 
-// (6) CHOOSE RANDOM TRAIT CHOICES (a function that uses a random integer generator function to choose random trait choices for size, activity, attention, and training, then runs the function that will choose a breed based on the traits)
+// VJS (6) CHOOSE RANDOM TRAIT CHOICES (a function that uses a random integer generator function to choose random trait choices for size, activity, attention, and training, then runs the function that will choose a breed based on the traits)
 dogBreedApp.randomTraitChoices = () => {
     // a function that will return a random integer between a designated minimum and maximum number
     function randomInteger(min, max) {
@@ -408,7 +398,7 @@ dogBreedApp.randomTraitChoices = () => {
 }
 
 
-// (7) FORM SUBMIT EVENT LISTENER (a function that runs the function that stores the user's trait choices when the user submits the form)
+// VJS (7) FORM SUBMIT EVENT LISTENER (a function that runs the function that stores the user's trait choices when the user submits the form)
 dogBreedApp.formSubmitEventListener = () => {
     // listen for when the user submits the form
     document.querySelector('form').addEventListener('submit', function (event) {
@@ -420,7 +410,7 @@ dogBreedApp.formSubmitEventListener = () => {
 }
 
 
-// (8) USERS TRAIT CHOICES (a function that alerts the user if they have made under 4 selections. else, it stores their selections and runs the function that chooses a breed based on the traits)
+// VJS (8) USERS TRAIT CHOICES (a function that alerts the user if they have made under 4 selections. else, it stores their selections and runs the function that chooses a breed based on the traits)
 dogBreedApp.usersTraitChoices = () => {
     const radioInputs = document.querySelectorAll('input:checked').length;
 
@@ -447,7 +437,7 @@ dogBreedApp.generatedBreed = (size, activity, attention, training) => {
 
     // filter through that dog size array and find the dog breed with activity, attention, and training traits that match the trait choices passed in
     dogSizeOptions.filter((dogSizeOption) => {
-        
+
         if (activity === dogSizeOption.activityLevel && attention === dogSizeOption.attentionLevel && training === dogSizeOption.trainingLevel) {
 
             // store the breed's information in variables
@@ -508,11 +498,11 @@ dogBreedApp.displayBreedInfo = (imageSource, imageAlt, temperament, lifeExpec, g
 }
 
 
-// (11) SCROLL TO RESULTS SECTION (a function that automatically brings user to their displayed results) 
+// VJS (11) SCROLL TO RESULTS SECTION (a function that automatically brings user to their displayed results) 
 dogBreedApp.scrollToResults = () => {
-    $('html').animate({
-        scrollTop: $('#results').offset().top
-    }, 1000);
+    document.querySelector('#results').scrollIntoView({
+        behavior: 'smooth'
+    });
 }
 
 
@@ -542,15 +532,16 @@ dogBreedApp.chooseDifferentTraits = () => {
 }
 
 
-// (13) SCROLL TO TOP OF PAGE (a function that automatically brings the user to the top of the page)
+// VJS (13) SCROLL TO TOP OF PAGE (a function that automatically brings the user to the top of the page)
 dogBreedApp.scrollToTop = () => {
-    $('html, body').animate({
-        scrollTop: $('header').offset().top
-    }, 1000);
+    document.documentElement.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    })
 }
 
 
-// (2) INITIALIZATION (a function that initializes the app)
+// VJS (2) INITIALIZATION (a function that initializes the app)
 dogBreedApp.init = () => {
     // upon app initialization, run the event listener functions
     dogBreedApp.randomBreedEventListener();
@@ -559,13 +550,8 @@ dogBreedApp.init = () => {
 }
 
 
-// (1) DOCUMENT READY (a function that waits for the document to load)
-$(function () {
+// VJS (1) DOCUMENT READY (a function that waits for the document to load)
+document.addEventListener('DOMContentLoaded', function () {
     // once the DOM has loaded, initialize the app
     dogBreedApp.init();
 })
-// (1) DOCUMENT READY (a function that waits for the document to load)
-    // document.addEventListener('DOMContentLoaded', function () {
-    //     // once the DOM has loaded, initialize the app
-    //     dogBreedApp.init();
-    // })
