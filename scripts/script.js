@@ -337,14 +337,26 @@ const $differentTraitsButton = $('#different-traits-button');
 const $titles = $('.results-title');
 
 
-// (4) NEXT QUESTION EVENT LISTENER (a function that brings the user to the following question when the user clicks the 'first question' or 'next question' links)
+// (4) NEXT QUESTION EVENT LISTENER (a function that brings the user to the following question when the user clicks the 'first question' or 'next question' (arrow icons) links)
 dogBreedApp.nextQuestionEventListener = function () {
-    // listen for when the user clicks the link
-    $('.scroll').on('click', function (event) {
-        event.preventDefault();
-        // bring the user to the following question
-        $('html,body').animate({ scrollTop: $(this.hash).offset().top }, 500);
-    });
+    // select all elements with a class of 'scroll'
+    const links = document.querySelectorAll('.scroll');
+
+    // apply the scroll on user click (ie: nextQuestion function) to each link that has the 'scroll' class
+    for (const link of links) {
+        link.addEventListener('click', nextQuestion);
+    }
+
+    // a function that scrolls to the next question
+    function nextQuestion(e) {
+        e.preventDefault();
+        // grab the href attribute value from the link that was clicked on
+        const href = this.getAttribute('href');
+        // bring the user to the element with the corresponding ID (ie: the next question)
+        document.querySelector(href).scrollIntoView({
+            behavior: 'smooth'
+        });
+    }
 };
 
 
@@ -543,3 +555,8 @@ $(function () {
     // once the DOM has loaded, initialize the app
     dogBreedApp.init();
 });
+// (1) DOCUMENT READY (a function that waits for the document to load)
+    // document.addEventListener('DOMContentLoaded', function () {
+    //     // once the DOM has loaded, initialize the app
+    //     dogBreedApp.init();
+    // })

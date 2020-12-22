@@ -278,7 +278,7 @@ img {
 
 .wrapper {
   max-width: 1280px;
-  width: 85%;
+  width: 90%;
   margin: 0 auto;
 }
 
@@ -355,7 +355,7 @@ header div.text-container p {
 }
 
 .start:hover, .start:focus, .start:active {
-  background-color: #DA972F;
+  background-color: #ce8a24;
   letter-spacing: 1.5px;
 }
 
@@ -451,7 +451,7 @@ header div.text-container p {
 }
 
 .option label:hover, .option label:active, .option label:focus {
-  background-color: #DA972F;
+  background-color: #ce8a24;
   letter-spacing: 3px;
 }
 
@@ -461,7 +461,7 @@ header div.text-container p {
 }
 
 .option input[type=radio]:checked + label {
-  background-color: #DA972F;
+  background-color: #ce8a24;
   letter-spacing: 3px;
   font-weight: 700;
 }
@@ -589,7 +589,7 @@ header div.text-container p {
 
 .dynamic-breed,
 .dynamic-links {
-  border-bottom: 2px solid #DA972F;
+  border-bottom: 2px solid #ce8a24;
   font-style: italic;
 }
 
@@ -597,7 +597,7 @@ header div.text-container p {
 .dynamic-links:hover,
 .dynamic-links:focus,
 .dynamic-links:active {
-  color: #DA972F;
+  color: #ce8a24;
 }
 
 .dynamic-links {
@@ -623,11 +623,11 @@ header div.text-container p {
 }
 
 .dynamic-button:hover, .dynamic-button:active, .dynamic-button:focus {
-  background-color: #DA972F;
+  background-color: #ce8a24;
 }
 
 footer {
-  background-color: #DA972F;
+  background-color: #ce8a24;
   margin-top: 60px;
   padding: 10px 0;
 }
