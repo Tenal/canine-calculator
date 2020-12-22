@@ -322,7 +322,7 @@ dogBreedApp.dogSize = {
             breedLink: '<a target="_blank" href="https://www.akc.org/dog-breeds/catahoula-leopard-dog/">Catahoula Leopard Dog</a>'
         }
     ]
-};
+}
 
 
 // (3) CACHED SELECTORS (caching selectors that will be used 2+ times)
@@ -335,6 +335,16 @@ const $group = $('#group');
 const $similarBreeds = $('#similar-breed-list');
 const $differentTraitsButton = $('#different-traits-button');
 const $titles = $('.results-title');
+// (3) CACHED SELECTORS (caching selectors that will be used 2+ times)
+    // const results = document.querySelectorAll('#results');
+    // const breedName = document.querySelectorAll('#results-heading');
+    // const image = document.querySelectorAll('#results-image');
+    // const temperament = document.querySelectorAll('#temperament-list');
+    // const lifeExpec = document.querySelectorAll('#life-expec');
+    // const group = document.querySelectorAll('#group');
+    // const similarBreeds = document.querySelectorAll('#similar-breed-list');
+    // const differentTraitsButton = document.querySelectorAll('#different-traits-button');
+    // const titles = document.querySelectorAll('.results-title');
 
 
 // (4) NEXT QUESTION EVENT LISTENER (a function that brings the user to the following question when the user clicks the 'first question' or 'next question' (arrow icons) links)
@@ -348,8 +358,8 @@ dogBreedApp.nextQuestionEventListener = function () {
     }
 
     // a function that scrolls to the next question
-    function nextQuestion(e) {
-        e.preventDefault();
+    function nextQuestion(event) {
+        event.preventDefault();
         // grab the href attribute value from the link that was clicked on
         const href = this.getAttribute('href');
         // bring the user to the element with the corresponding ID (ie: the next question)
@@ -357,17 +367,17 @@ dogBreedApp.nextQuestionEventListener = function () {
             behavior: 'smooth'
         });
     }
-};
+}
 
 
 // (5) RANDOM BREED EVENT LISTENER (a function that runs the function that generates random trait choices when the user clicks the 'random breed' button)
 dogBreedApp.randomBreedEventListener = () => {
     // listen for when the user clicks the button
-    $('#random-breed').on('click', function () {
-        // run the function to generate random trait choices
+    document.querySelector('#random-breed').addEventListener('click', function () {
+        // run the function that generates random trait choices
         dogBreedApp.randomTraitChoices();
     });
-};
+}
 
 
 // (6) CHOOSE RANDOM TRAIT CHOICES (a function that uses a random integer generator function to choose random trait choices for size, activity, attention, and training, then runs the function that will choose a breed based on the traits)
@@ -376,7 +386,7 @@ dogBreedApp.randomTraitChoices = () => {
     function randomInteger(min, max) {
         return Math.floor(Math.random() * (max - min + 1)) + min;
     }
-    
+
     // choose a random dog size by a) choosing a random integer between 0 and 2 (0, 1 or 2), then b) defining the 'size' variable based on that random integer
     let size = randomInteger(0, 2);
     randomSizeChoice = (size === 0) ? "small" : (size === 1) ? "medium" : "large";
@@ -393,42 +403,41 @@ dogBreedApp.randomTraitChoices = () => {
     let training = randomInteger(0, 1);
     randomTrainingChoice = (training === 0) ? "low" : "high";
 
-
     // run the function to find the dog breed object that corresponds to the random choices
     dogBreedApp.generatedBreed(randomSizeChoice, randomActivityChoice, randomAttentionChoice, randomTrainingChoice);
-};
+}
 
 
 // (7) FORM SUBMIT EVENT LISTENER (a function that runs the function that stores the user's trait choices when the user submits the form)
 dogBreedApp.formSubmitEventListener = () => {
     // listen for when the user submits the form
-    $('form').on('submit', function (event) {
+    document.querySelector('form').addEventListener('submit', function (event) {
         // prevent default form behaviour (page refresh)
         event.preventDefault();
         // run the function that error handles & stores the user's choices
         dogBreedApp.usersTraitChoices();
     });
-};
+}
 
 
 // (8) USERS TRAIT CHOICES (a function that alerts the user if they have made under 4 selections. else, it stores their selections and runs the function that chooses a breed based on the traits)
 dogBreedApp.usersTraitChoices = () => {
-    const radioInputs = $('input:checked').length;
+    const radioInputs = document.querySelectorAll('input:checked').length;
 
     // IF all form fields have not been filled out, then alert the user
     if (radioInputs < 4) {
         alert(`Oh no! Looks like you haven't answered all of the questions, furriend! Please complete all of the questions to find your perfect dog breed!`);
     } else {
-        //ELSE store the users selections in variables
-        const usersSizeChoice = $('input[name=size]:checked').val();
-        const usersActivityChoice = $('input[name=activity]:checked').val();
-        const usersAttentionChoice = $('input[name=attention]:checked').val();
-        const usersTrainingChoice = $('input[name=training]:checked').val();
+        // ELSE store the users selections in variables
+        const usersSizeChoice = document.querySelector('input[name=size]:checked').value;
+        const usersActivityChoice = document.querySelector('input[name=activity]:checked').value;
+        const usersAttentionChoice = document.querySelector('input[name=attention]:checked').value;
+        const usersTrainingChoice = document.querySelector('input[name=training]:checked').value;
 
         // run the function to find the dog breed object that corresponds to the users choices
         dogBreedApp.generatedBreed(usersSizeChoice, usersActivityChoice, usersAttentionChoice, usersTrainingChoice);
     }
-};
+}
 
 
 // (9) GENERATE A BREED (a function that takes the trait choices passed in as arguments and filters through the dog object to find a matching breed)
@@ -469,7 +478,7 @@ dogBreedApp.generatedBreed = (size, activity, attention, training) => {
             dogBreedApp.scrollToResults();
         };
     });
-};
+}
 
 
 // (10) DISPLAY DOG BREED INFORMATION (a function that takes the stored breed information and displays the associated image and text in the results section)
@@ -496,7 +505,7 @@ dogBreedApp.displayBreedInfo = (imageSource, imageAlt, temperament, lifeExpec, g
     similarBreeds.forEach((breed) => {
         $similarBreeds.append(`<li class="dynamic-text dynamic-links">${breed}</li>`)
     });
-};
+}
 
 
 // (11) SCROLL TO RESULTS SECTION (a function that automatically brings user to their displayed results) 
@@ -504,7 +513,7 @@ dogBreedApp.scrollToResults = () => {
     $('html').animate({
         scrollTop: $('#results').offset().top
     }, 1000);
-};
+}
 
 
 // (12) RESET RESULTS (a function that removes all appended breed information and scrolls to the top of the page so the user can starts again & select different traits)
@@ -530,7 +539,7 @@ dogBreedApp.chooseDifferentTraits = () => {
         // (b) scroll to the top of the page to allow user to choose new traits
         dogBreedApp.scrollToTop();
     });
-};
+}
 
 
 // (13) SCROLL TO TOP OF PAGE (a function that automatically brings the user to the top of the page)
@@ -538,7 +547,7 @@ dogBreedApp.scrollToTop = () => {
     $('html, body').animate({
         scrollTop: $('header').offset().top
     }, 1000);
-};
+}
 
 
 // (2) INITIALIZATION (a function that initializes the app)
@@ -547,14 +556,14 @@ dogBreedApp.init = () => {
     dogBreedApp.randomBreedEventListener();
     dogBreedApp.formSubmitEventListener();
     dogBreedApp.nextQuestionEventListener();
-};
+}
 
 
 // (1) DOCUMENT READY (a function that waits for the document to load)
 $(function () {
     // once the DOM has loaded, initialize the app
     dogBreedApp.init();
-});
+})
 // (1) DOCUMENT READY (a function that waits for the document to load)
     // document.addEventListener('DOMContentLoaded', function () {
     //     // once the DOM has loaded, initialize the app
