@@ -9,8 +9,11 @@
 /* MAJOR BREAKPOINT 1: small desktop & portrait tablet */
 @media (max-width: 1000px) {
     // HEADER
-    header h1 {
-        font-size: 7.2rem;
+    header {
+        background-attachment: fixed;
+            h1 {
+                font-size: 7.2rem;
+            }
     }
 
     // MAIN - DYNAMIC RESULTS
