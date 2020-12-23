@@ -546,11 +546,12 @@ header div.text-container p {
 
 .results-image-and-text .results-image,
 .results-image-and-text .results-text {
-  width: 37%;
+  width: 36%;
 }
 
 .results-image-and-text .results-text {
-  padding: 0 20px;
+  margin-left: 20px;
+  padding: 0 0 10px;
   text-align: center;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -562,12 +563,15 @@ header div.text-container p {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-}
-
-.results-image-and-text .results-text .results-title {
   border: 1px solid #000000;
   -webkit-box-shadow: 0 0 5px #000000;
           box-shadow: 0 0 5px #000000;
+  border-top: none;
+}
+
+.results-image-and-text .results-text .results-title {
+  border-top: 1px solid #000000;
+  border-bottom: 1px solid #000000;
   background-color: #7397AF;
   text-transform: uppercase;
   font-size: 2rem;
@@ -609,6 +613,7 @@ header div.text-container p {
 .dynamic-text {
   font-size: 2.0rem;
   line-height: 2.6rem;
+  margin: 0 5px 0;
 }
 
 .dynamic-image {
@@ -620,7 +625,7 @@ header div.text-container p {
 }
 
 .dynamic-button {
-  width: 300px;
+  width: 280px;
   background-color: #e9bd5f;
   font-weight: 700;
 }
@@ -663,9 +668,9 @@ footer div a {
 }
 
 /* MAJOR BREAKPOINT 1: small desktop & portrait tablet */
-@media (max-width: 940px) {
+@media (max-width: 1000px) {
   header h1 {
-    font-size: 7.4rem;
+    font-size: 7.2rem;
   }
   .results-image-and-text .results-image,
   .results-image-and-text .results-text {
@@ -728,8 +733,8 @@ footer div a {
     width: 90%;
   }
   .results-image-and-text .results-text {
-    margin-top: 30px;
-    padding: 0;
+    margin: 30px 0 0;
+    padding: 0 0 15px;
     min-height: 400px;
   }
   .dynamic-heading {
@@ -794,11 +799,6 @@ footer div a {
   .results-image-and-text .results-image,
   .results-image-and-text .results-text {
     width: 100%;
-  }
-  .results-image-and-text .results-text {
-    margin-top: 30px;
-    padding: 0;
-    min-height: 400px;
   }
   .results-image-and-text .results-text .results-title {
     letter-spacing: 0.4rem;

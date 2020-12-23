@@ -19,17 +19,21 @@
     justify-content: center;
         .results-image,
         .results-text {
-            width: 37%;
+            width: 36%;
         }
         .results-text {
-            padding: 0 20px;
+            margin-left: 20px;
+            padding: 0 0 10px;
             text-align: center;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+            border: 1px solid $font-colour;
+            box-shadow: 0 0 5px $font-colour;
+            border-top: none;
                 .results-title {
-                    border: 1px solid $font-colour;
-                    box-shadow: 0 0 5px $font-colour;
+                    border-top: 1px solid $font-colour;
+                    border-bottom: 1px solid $font-colour;
                     background-color: $secondary-colour;
                     text-transform: uppercase;
                     font-size: 2rem;
@@ -70,6 +74,7 @@
 .dynamic-text {
     font-size: 2.0rem;
     line-height: 2.6rem;
+    margin: 0 5px 0;
 }
 
 .dynamic-image {
@@ -80,7 +85,7 @@
 }
 
 .dynamic-button {
-    width: 300px;
+    width: 280px;
     background-color: $option;
     font-weight: 700;
         &:hover,

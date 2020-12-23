@@ -478,7 +478,7 @@ dogApp.displayBreed = (imageSource, imageAlt, temperamentTraits, lifeExpectancy,
     // style & append breed name to the results section
     const breedNameChild = document.createElement('h2');
     breedNameChild.classList.add('dynamic-heading');
-    breedNameChild.innerHTML = `Your perfect breed is: <span class="dynamic-breed">${breedLink}</span>`;
+    breedNameChild.innerHTML = `<span class="dynamic-breed">${breedLink}</span>`;
     breedName.appendChild(breedNameChild);
 
     // style & append breed traits to the results section

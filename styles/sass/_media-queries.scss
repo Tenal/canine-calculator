@@ -7,10 +7,10 @@
 }
 
 /* MAJOR BREAKPOINT 1: small desktop & portrait tablet */
-@media (max-width: 940px) {
+@media (max-width: 1000px) {
     // HEADER
     header h1 {
-        font-size: 7.4rem;
+        font-size: 7.2rem;
     }
 
     // MAIN - DYNAMIC RESULTS
@@ -73,8 +73,8 @@
                 width: 90%;
             }
             .results-text {
-                margin-top: 30px;
-                padding: 0;
+                margin: 30px 0 0;
+                padding: 0 0 15px;
                 min-height: 400px;
             }
     }
@@ -145,9 +145,6 @@
                 width: 100%;
             }
             .results-text {
-                margin-top: 30px;
-                padding: 0;
-                min-height: 400px;
                     .results-title {
                         letter-spacing: 0.4rem;
                     }
