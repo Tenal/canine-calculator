@@ -670,7 +670,7 @@ footer div a {
 /* MAJOR BREAKPOINT 1: small desktop & portrait tablet */
 @media (max-width: 1000px) {
   header {
-    background-attachment: fixed;
+    background-attachment: scroll;
   }
   header h1 {
     font-size: 7.2rem;
