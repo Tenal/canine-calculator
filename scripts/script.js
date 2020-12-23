@@ -1,8 +1,8 @@
 // APP NAMESPACE OBJECT
-const dogBreedApp = {};
+const dogApp = {};
 
 // APPENDED IMAGE & BREED INFORMATION OBJECT
-dogBreedApp.dogSize = {
+dogApp.dogSize = {
     small: [
         {
             activityLevel: 'high',
@@ -325,7 +325,7 @@ dogBreedApp.dogSize = {
 }
 
 
-// VJS (3) CACHED SELECTORS (caching selectors that will be used 2+ times)
+// (3) SELECTORS (selectors that will be used 2+ times)
     const results = document.querySelector('#results');
     const breedName = document.querySelector('#results-heading');
     const image = document.querySelector('#results-image');
@@ -338,7 +338,7 @@ dogBreedApp.dogSize = {
 
 
 // (4) NEXT QUESTION EVENT LISTENER (a function that brings the user to the following question when the user clicks the 'first question' or 'next question' (arrow icons) links)
-dogBreedApp.nextQuestionEventListener = function () {
+dogApp.nextQuestionEventListener = function () {
     // select all elements with a class of 'scroll'
     const links = document.querySelectorAll('.scroll');
 
@@ -361,17 +361,17 @@ dogBreedApp.nextQuestionEventListener = function () {
 
 
 // (5) RANDOM BREED EVENT LISTENER (a function that runs the function that generates random trait choices when the user clicks the 'random breed' button)
-dogBreedApp.randomBreedEventListener = () => {
+dogApp.randomBreedEventListener = () => {
     // listen for when the user clicks the button
     document.querySelector('#random-breed').addEventListener('click', function () {
         // run the function that generates random trait choices
-        dogBreedApp.randomTraitChoices();
+        dogApp.randomTraitChoices();
     });
 }
 
 
-// (6) CHOOSE RANDOM TRAIT CHOICES (a function that uses a random integer generator function to choose random trait choices for size, activity, attention, and training, then runs the function that will choose a breed based on the traits)
-dogBreedApp.randomTraitChoices = () => {
+// (6) RANDOM TRAIT CHOICES (a function that uses a random integer generator function to choose random trait choices for size, activity, attention, and training, then runs the function that will choose a breed based on the traits)
+dogApp.randomTraitChoices = () => {
     // a function that will return a random integer between a designated minimum and maximum number
     function randomInteger(min, max) {
         return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -394,24 +394,24 @@ dogBreedApp.randomTraitChoices = () => {
     randomTrainingChoice = (training === 0) ? "low" : "high";
 
     // run the function to find the dog breed object that corresponds to the random choices
-    dogBreedApp.generatedBreed(randomSizeChoice, randomActivityChoice, randomAttentionChoice, randomTrainingChoice);
+    dogApp.generateBreed(randomSizeChoice, randomActivityChoice, randomAttentionChoice, randomTrainingChoice);
 }
 
 
 // (7) FORM SUBMIT EVENT LISTENER (a function that runs the function that stores the user's trait choices when the user submits the form)
-dogBreedApp.formSubmitEventListener = () => {
+dogApp.formSubmitEventListener = () => {
     // listen for when the user submits the form
     document.querySelector('form').addEventListener('submit', function (event) {
         // prevent default form behaviour (page refresh)
         event.preventDefault();
         // run the function that error handles & stores the user's choices
-        dogBreedApp.usersTraitChoices();
+        dogApp.usersTraitChoices();
     });
 }
 
 
 // (8) USERS TRAIT CHOICES (a function that alerts the user if they have made under 4 selections. else, it stores their selections and runs the function that chooses a breed based on the traits)
-dogBreedApp.usersTraitChoices = () => {
+dogApp.usersTraitChoices = () => {
     const radioInputs = document.querySelectorAll('input:checked').length;
 
     // IF all form fields have not been filled out, then alert the user
@@ -425,21 +425,20 @@ dogBreedApp.usersTraitChoices = () => {
         const usersTrainingChoice = document.querySelector('input[name=training]:checked').value;
 
         // run the function to find the dog breed object that corresponds to the users choices
-        dogBreedApp.generatedBreed(usersSizeChoice, usersActivityChoice, usersAttentionChoice, usersTrainingChoice);
+        dogApp.generateBreed(usersSizeChoice, usersActivityChoice, usersAttentionChoice, usersTrainingChoice);
     }
 }
 
 
-// (9) GENERATE A BREED (a function that takes the trait choices passed in as arguments and filters through the dog object to find a matching breed)
-dogBreedApp.generatedBreed = (size, activity, attention, training) => {
+// (9) GENERATE DOG BREED (a function that takes the trait choices passed in as arguments and filters through the dog object to find a matching breed)
+dogApp.generateBreed = (size, activity, attention, training) => {
     // find the dog size array that matches the user's size choice
-    const dogSizeOptions = dogBreedApp.dogSize[size];
+    const dogSizeOptions = dogApp.dogSize[size];
 
     // filter through that dog size array and find the dog breed with activity, attention, and training traits that match the trait choices passed in
     dogSizeOptions.filter((dogSizeOption) => {
         
         if (activity === dogSizeOption.activityLevel && attention === dogSizeOption.attentionLevel && training === dogSizeOption.trainingLevel) {
-
             // store the breed's information in variables
             const usersBreedImage = dogSizeOption.image;
             const usersBreedImageAlt = dogSizeOption.alt;
@@ -450,19 +449,19 @@ dogBreedApp.generatedBreed = (size, activity, attention, training) => {
             const usersBreedLink = dogSizeOption.breedLink;
 
             // remove appended content if user makes new choices when submitting the form again
-            dogBreedApp.resetResults();
+            dogApp.resetResults();
 
             // run the functions to display the breed information & automatically bring the user to the displayed results
-            dogBreedApp.displayBreedInfo(usersBreedImage, usersBreedImageAlt, usersBreedTemperament, usersBreedLifeExpect, usersBreedGroup, usersSimilarBreeds, usersBreedLink);
-            dogBreedApp.chooseDifferentTraits();
-            dogBreedApp.scrollToResults();
+            dogApp.displayBreed(usersBreedImage, usersBreedImageAlt, usersBreedTemperament, usersBreedLifeExpect, usersBreedGroup, usersSimilarBreeds, usersBreedLink);
+            dogApp.differentTraitsEventListener();
+            dogApp.scrollToResults();
         };
     });
 }
 
 
-// (10) DISPLAY DOG BREED INFORMATION (a function that takes the stored breed information and displays the associated image and text in the results section)
-dogBreedApp.displayBreedInfo = (imageSource, imageAlt, temperamentTraits, lifeExpectancy, breedGroup, similarBreed, breedLink) => {
+// (10) DISPLAY DOG BREED (a function that takes the stored breed information and displays the associated image and text in the results section)
+dogApp.displayBreed = (imageSource, imageAlt, temperamentTraits, lifeExpectancy, breedGroup, similarBreed, breedLink) => {
     // display hidden results titles & make results section 100vh
     for (let i = 0; i < titles.length; i++) {
         titles[i].style.visibility = 'visible'
@@ -473,8 +472,6 @@ dogBreedApp.displayBreedInfo = (imageSource, imageAlt, temperamentTraits, lifeEx
     const imageChild = document.createElement('img');
     imageChild.src = `${imageSource}`;
     imageChild.alt = `${imageAlt}`;
-    imageChild.style.padding = '10px';
-    imageChild.style.border = '1px solid black';
     imageChild.classList.add('dynamic-image');
     image.appendChild(imageChild);
 
@@ -522,8 +519,8 @@ dogBreedApp.displayBreedInfo = (imageSource, imageAlt, temperamentTraits, lifeEx
 }
 
 
-// (11) SCROLL TO RESULTS SECTION (a function that automatically brings user to their displayed results) 
-dogBreedApp.scrollToResults = () => {
+// (11) SCROLL TO RESULTS (a function that automatically brings user to their displayed results) 
+dogApp.scrollToResults = () => {
     document.querySelector('#results').scrollIntoView({
         behavior: 'smooth'
     });
@@ -531,19 +528,19 @@ dogBreedApp.scrollToResults = () => {
 
 
 // (12) TRY AGAIN (a function that removes all appended breed information and scrolls to the top of the page when the user clicks the 'choose different traits' button)
-dogBreedApp.chooseDifferentTraits = () => {
+dogApp.differentTraitsEventListener = () => {
     // when the 'choose different traits' button is clicked:
     differentTraitsButton.addEventListener('click', function () {
         // (a) remove all appended content
-        dogBreedApp.resetResults();
+        dogApp.resetResults();
         // (b) scroll to the top of the page to allow user to choose new traits
-        dogBreedApp.scrollToTop();
+        dogApp.scrollToTop();
     });
 }
 
 
 // (13) RESET RESULTS (a function that removes all appended breed information in the results section)
-dogBreedApp.resetResults = () => {
+dogApp.resetResults = () => {
     while (breedName.firstChild) breedName.removeChild(breedName.firstChild);
     while (image.firstChild) image.removeChild(image.firstChild);
     while (temperament.firstChild) temperament.removeChild(temperament.firstChild);
@@ -559,7 +556,7 @@ dogBreedApp.resetResults = () => {
 
 
 // (14) SCROLL TO TOP OF PAGE (a function that automatically brings the user to the top of the page)
-dogBreedApp.scrollToTop = () => {
+dogApp.scrollToTop = () => {
     document.documentElement.scrollTo({
         top: 0,
         behavior: "smooth"
@@ -568,16 +565,16 @@ dogBreedApp.scrollToTop = () => {
 
 
 // (2) INITIALIZATION (a function that initializes the app)
-dogBreedApp.init = () => {
+dogApp.init = () => {
     // upon app initialization, run the event listener functions
-    dogBreedApp.randomBreedEventListener();
-    dogBreedApp.formSubmitEventListener();
-    dogBreedApp.nextQuestionEventListener();
+    dogApp.randomBreedEventListener();
+    dogApp.formSubmitEventListener();
+    dogApp.nextQuestionEventListener();
 }
 
 
 // (1) DOCUMENT READY (a function that waits for the document to load)
 document.addEventListener('DOMContentLoaded', function () {
     // once the DOM has loaded, initialize the app
-    dogBreedApp.init();
+    dogApp.init();
 })

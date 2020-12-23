@@ -73,6 +73,8 @@
 }
 
 .dynamic-image {
+    border: 1px solid $font-colour;
+    padding: 10px;
     box-shadow: 0 0 5px $font-colour;
     background-color: $secondary-colour;
 }
