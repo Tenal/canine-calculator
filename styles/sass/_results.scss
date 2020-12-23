@@ -55,7 +55,6 @@
 
 .dynamic-breed,
 .dynamic-links {
-    border-bottom: 2px solid $option-active;
     font-style: italic;
         &:hover,
         &:focus,
@@ -66,7 +65,6 @@
 
 .dynamic-links {
     font-weight: 700;
-    border-bottom: 0;
 }
 
 .dynamic-text {
