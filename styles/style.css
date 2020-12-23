@@ -306,7 +306,7 @@ header div.text-container {
   border: 1px solid #000000;
   -webkit-box-shadow: 0 0 10px #000000;
           box-shadow: 0 0 10px #000000;
-  padding: 0 10px 20px 10px;
+  padding: 0 20px 17px;
   margin-top: 10vh;
   text-align: center;
 }
@@ -327,14 +327,14 @@ header div.text-container p {
           box-shadow: 0 2px 3px #000000;
   padding: 10px 0;
   width: 260px;
-  margin: 15px 0 10px 0;
+  margin-top: 15px;
   -webkit-transition: 0.3s all;
   transition: 0.3s all;
   cursor: pointer;
 }
 
 .generator-button:hover, .generator-button:active, .generator-button:focus {
-  background-color: #ABC5D2;
+  background-color: #577e98;
   letter-spacing: 1.3px;
 }
 
@@ -766,6 +766,7 @@ footer div a {
   }
   header div.text-container {
     margin: 10vh auto 60px auto;
+    padding: 0 10px 17px;
     width: 270px;
   }
   header div.text-container .generator-button,

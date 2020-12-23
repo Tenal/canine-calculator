@@ -19,7 +19,7 @@ header {
             min-height: auto;
             border: 1px solid $font-colour;
             box-shadow: 0 0 10px $font-colour;
-            padding: 0 10px 20px 10px;
+            padding: 0 20px 17px;
             margin-top: 10vh;
             text-align: center;
                 p {
@@ -40,13 +40,13 @@ header {
     box-shadow: 0 2px 3px $font-colour;
     padding: 10px 0;
     width: 260px;
-    margin: 15px 0 10px 0;
+    margin-top: 15px;
     transition: 0.3s all;
     cursor: pointer;
         &:hover,
         &:active,
         &:focus {
-            background-color: $primary-colour;
+            background-color: darken($secondary-colour, 10%);
             letter-spacing: 1.3px;
     }
 }
