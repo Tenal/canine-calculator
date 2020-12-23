@@ -437,6 +437,8 @@ header div.text-container p {
 }
 
 .option label {
+  position: relative;
+  overflow: hidden;
   font-size: 2rem;
   text-transform: uppercase;
   text-align: center;
@@ -457,6 +459,7 @@ header div.text-container p {
 
 .option input[type=radio] {
   position: absolute;
+  bottom: 0;
   opacity: 0;
 }
 
